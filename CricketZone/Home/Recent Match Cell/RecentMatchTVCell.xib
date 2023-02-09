@@ -164,6 +164,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="league" destination="6Sx-ma-qmj" id="QpH-qC-cxh"/>
+                <outlet property="matchBackground" destination="703-fw-ahH" id="79R-k4-u92"/>
                 <outlet property="matchDate" destination="9pR-rQ-2dU" id="0dU-NB-Jlu"/>
                 <outlet property="matchResult" destination="WEc-hS-kcM" id="mu8-Kc-duw"/>
                 <outlet property="team1Code" destination="hFS-vC-2UY" id="bJd-jM-mfL"/>

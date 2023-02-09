@@ -61,6 +61,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		350014792995576B001D814C /* Recent Match Cell */ = {
+			isa = PBXGroup;
+			children = (
+				89E1DB7E299522DB008452C3 /* RecentMatchTVCell.swift */,
+				89E1DB7F299522DB008452C3 /* RecentMatchTVCell.xib */,
+			);
+			path = "Recent Match Cell";
+			sourceTree = "<group>";
+		};
+		3500147A299557A2001D814C /* Live Match Cell */ = {
+			isa = PBXGroup;
+			children = (
+				899C8F6E2994CCE00001AC43 /* LiveMatchCVCell.swift */,
+				899C8F6F2994CCE00001AC43 /* LiveMatchCVCell.xib */,
+			);
+			path = "Live Match Cell";
+			sourceTree = "<group>";
+		};
 		899C8F3A29948FE00001AC43 = {
 			isa = PBXGroup;
 			children = (
@@ -80,10 +98,10 @@
 		899C8F4529948FE00001AC43 /* CricketZone */ = {
 			isa = PBXGroup;
 			children = (
-				89E1DB742994E2E4008452C3 /* Constants.swift */,
-				899C8F642994A4990001AC43 /* Shared */,
 				899C8F4629948FE00001AC43 /* AppDelegate.swift */,
 				899C8F4829948FE00001AC43 /* SceneDelegate.swift */,
+				89E1DB742994E2E4008452C3 /* Constants.swift */,
+				899C8F642994A4990001AC43 /* Shared */,
 				899C8F632994A48A0001AC43 /* Home */,
 				899C8F6D2994C2F60001AC43 /* Fixture */,
 				899C8F4C29948FE00001AC43 /* Main.storyboard */,
@@ -99,12 +117,10 @@
 			isa = PBXGroup;
 			children = (
 				899C8F5D2994A0E80001AC43 /* HomeViewController.swift */,
-				89E1DB7E299522DB008452C3 /* RecentMatchTVCell.swift */,
-				89E1DB7F299522DB008452C3 /* RecentMatchTVCell.xib */,
 				899C8F5F2994A1000001AC43 /* HomeViewModel.swift */,
 				899C8F612994A11E0001AC43 /* Home.storyboard */,
-				899C8F6E2994CCE00001AC43 /* LiveMatchCVCell.swift */,
-				899C8F6F2994CCE00001AC43 /* LiveMatchCVCell.xib */,
+				350014792995576B001D814C /* Recent Match Cell */,
+				3500147A299557A2001D814C /* Live Match Cell */,
 			);
 			path = Home;
 			sourceTree = "<group>";
