@@ -8,6 +8,34 @@
 import Foundation
 import UIKit
 
+ class Shared {
+   
+     func getReadableDateTime(data: String) -> (String, String) {
+         let dateString = data
+         let dateFormatter = DateFormatter()
+         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
+         guard let date = dateFormatter.date(from: dateString) else {
+             print("Invalid date format")
+             return ("", "")
+         }
+
+         let calendar = Calendar.current
+         let dateComponents = calendar.dateComponents([.day, .month, .year], from: date)
+         let month = calendar.monthSymbols[dateComponents.month! - 1]
+         
+         dateFormatter.dateFormat = "h:mm a"
+         dateFormatter.amSymbol = "AM"
+         dateFormatter.pmSymbol = "PM"
+
+         let time = dateFormatter.string(from: date)
+         let readableDate = "\(dateComponents.day!) \(month)"
+         
+         return (time, readableDate)
+     }
+
+}
+
+
 class RoundedTabBar: UITabBar {
     override func draw(_ rect: CGRect) {
         let inset: CGFloat = 3

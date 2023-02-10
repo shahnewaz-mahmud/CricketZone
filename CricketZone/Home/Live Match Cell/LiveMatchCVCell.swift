@@ -20,6 +20,9 @@ class LiveMatchCVCell: UICollectionViewCell {
     @IBOutlet weak var team2Code: UILabel!
     @IBOutlet weak var team2Over: UILabel!
     
+    @IBOutlet weak var matchTime: UILabel!
+    
+    @IBOutlet weak var liveLabelImg: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -28,6 +31,24 @@ class LiveMatchCVCell: UICollectionViewCell {
         team1Flag.layer.cornerRadius = 9
         matchBackgroundView.dropShadow()
     
+    }
+    
+    func setMatch(matchInfo: Match) {
+        league.text = matchInfo.type
+        team1Code.text = matchInfo.localteam?.code
+        team2Code.text = matchInfo.visitorteam?.code
+        if matchInfo.runs.isEmpty {
+            liveLabelImg.isHidden = true
+            team1Score.isHidden = true
+            team2Score.isHidden = true
+            team1Over.isHidden = true
+            team2Over.isHidden = true
+            
+            let dateTime = Shared().getReadableDateTime(data: matchInfo.starting_at ?? "")
+            matchTime.text = dateTime.1+", "+dateTime.0
+        }
+        
+ 
     }
 
 }

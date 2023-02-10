@@ -25,14 +25,26 @@ class RecentMatchTVCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        team1Flag.layer.cornerRadius = 10
+        team2Flag.layer.cornerRadius = 10
+        matchBackground.layer.cornerRadius = 20
+        matchBackground.dropShadow()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        team1Flag.layer.cornerRadius = 5
-        team1Flag.layer.cornerRadius = 5
-        matchBackground.layer.cornerRadius = 20
-        matchBackground.dropShadow()
+    }
+    
+    func setMatch(matchInfo: Match) {
+        league.text = matchInfo.type
+        team1Code.text = matchInfo.localteam?.code
+        team2Code.text = matchInfo.visitorteam?.code
+        let dateTime = Shared().getReadableDateTime(data: matchInfo.starting_at ?? "")
+        matchDate.text = dateTime.1 + ", " + dateTime.0
+        team1Score.text = String(matchInfo.runs[0].score ?? 0)+"/"
+        team1Over.text = "("+String(matchInfo.runs[0].overs ?? 0)+")"
+
     }
     
 }

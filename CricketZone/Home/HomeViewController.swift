@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class HomeViewController: UIViewController {
     
@@ -13,6 +14,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var liveMatchCollectionView: UICollectionView!
     @IBOutlet weak var recentMatchTableView: UITableView!
+    
+    var homeViewModel = HomeViewModel()
+    
+    private var cancellables: Set<AnyCancellable> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +31,13 @@ class HomeViewController: UIViewController {
         
         configureLiveMatchCell()
         configureRecentMatchCell()
+        
+        homeViewModel.fetchLiveMatch()
+        homeViewModel.fetchRecentMatch()
+        
+        setupBinder()
+        
+        testMethod()
 
     }
     
@@ -50,6 +62,27 @@ class HomeViewController: UIViewController {
         let recentMatchNib = UINib(nibName: Constants.recentMatchTVCellId, bundle: nil)
         recentMatchTableView.register(recentMatchNib, forCellReuseIdentifier: Constants.recentMatchTVCellId)
     }
+    
+    func setupBinder() {
+        homeViewModel.$liveMatchList.sink { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.liveMatchCollectionView.reloadData()
+            }
+            
+        }.store(in: &cancellables)
+        
+        homeViewModel.$recentMatchList.sink{ [weak self] _ in
+            DispatchQueue.main.async {
+                print("Hello")
+                self?.recentMatchTableView.reloadData()
+            }
+            
+        }.store(in: &cancellables)
+    }
+    
+    func testMethod() {
+        
+    }
 
 
 }
@@ -57,11 +90,17 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return homeViewModel.liveMatchList?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let liveMatchCollectionViewCell = liveMatchCollectionView.dequeueReusableCell(withReuseIdentifier: Constants.liveMatchCVCellId, for: indexPath) as! LiveMatchCVCell
+        let liveMatchCollectionViewCell = liveMatchCollectionView.dequeueReusableCell(withReuseIdentifier: Constants.liveMatchCVCellId, for: indexPath) as? LiveMatchCVCell
+        
+        guard let liveMatchCollectionViewCell = liveMatchCollectionViewCell else { return UICollectionViewCell() }
+
+        guard let liveMatchList = homeViewModel.liveMatchList else { return UICollectionViewCell() }
+
+        liveMatchCollectionViewCell.setMatch(matchInfo: liveMatchList[indexPath.row])
         
         return liveMatchCollectionViewCell
     }
@@ -77,7 +116,14 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let recentMatchCell = recentMatchTableView.dequeueReusableCell(withIdentifier: Constants.recentMatchTVCellId, for: indexPath) as! RecentMatchTVCell
+        let recentMatchCell = recentMatchTableView.dequeueReusableCell(withIdentifier: Constants.recentMatchTVCellId, for: indexPath) as? RecentMatchTVCell
+        
+        guard let recentMatchCell = recentMatchCell else { return UITableViewCell() }
+
+        guard let recentMatchList = homeViewModel.recentMatchList else { return UITableViewCell() }
+
+        recentMatchCell.setMatch(matchInfo: recentMatchList[indexPath.row])
+        
         return recentMatchCell
 
     }
