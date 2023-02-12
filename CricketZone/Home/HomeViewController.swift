@@ -107,7 +107,9 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 extension HomeViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        homeViewModel.goToMatchDetailsPage(indexpath: indexPath, originVC: self)
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {

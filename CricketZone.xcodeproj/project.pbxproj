@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1158FB18FBB2833E0B0FDC40 /* Pods_CricketZone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BDD9269FE801248C9C98B8A /* Pods_CricketZone.framework */; };
+		35FAC67E299802740069DEB4 /* MatchDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FAC67D299802740069DEB4 /* MatchDetailsViewController.swift */; };
+		35FAC681299802910069DEB4 /* MatchDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FAC680299802910069DEB4 /* MatchDetailsViewModel.swift */; };
 		895CE68A2995EA8000150362 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895CE6892995EA8000150362 /* APIService.swift */; };
 		895CE68D299601B200150362 /* FixtureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895CE68C299601B200150362 /* FixtureModel.swift */; };
 		895CE68F2996064200150362 /* cricketAPIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895CE68E2996064200150362 /* cricketAPIConfig.swift */; };
@@ -31,6 +34,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		031C575EC0964D1EC9F7ACAD /* Pods-CricketZone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CricketZone.debug.xcconfig"; path = "Target Support Files/Pods-CricketZone/Pods-CricketZone.debug.xcconfig"; sourceTree = "<group>"; };
+		1FAE0122A389898F2860FB95 /* Pods-CricketZone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CricketZone.release.xcconfig"; path = "Target Support Files/Pods-CricketZone/Pods-CricketZone.release.xcconfig"; sourceTree = "<group>"; };
+		35FAC67D299802740069DEB4 /* MatchDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailsViewController.swift; sourceTree = "<group>"; };
+		35FAC680299802910069DEB4 /* MatchDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailsViewModel.swift; sourceTree = "<group>"; };
+		3BDD9269FE801248C9C98B8A /* Pods_CricketZone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CricketZone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		895CE6892995EA8000150362 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		895CE68C299601B200150362 /* FixtureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureModel.swift; sourceTree = "<group>"; };
 		895CE68E2996064200150362 /* cricketAPIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cricketAPIConfig.swift; sourceTree = "<group>"; };
@@ -61,12 +69,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1158FB18FBB2833E0B0FDC40 /* Pods_CricketZone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1446150A3703E7B33F1DC0DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BDD9269FE801248C9C98B8A /* Pods_CricketZone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A9D4C6C147FFE8B7C7046DD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				031C575EC0964D1EC9F7ACAD /* Pods-CricketZone.debug.xcconfig */,
+				1FAE0122A389898F2860FB95 /* Pods-CricketZone.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		350014792995576B001D814C /* Recent Match Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +111,15 @@
 			path = "Live Match Cell";
 			sourceTree = "<group>";
 		};
+		35FAC67F2998027A0069DEB4 /* Match Details */ = {
+			isa = PBXGroup;
+			children = (
+				35FAC67D299802740069DEB4 /* MatchDetailsViewController.swift */,
+				35FAC680299802910069DEB4 /* MatchDetailsViewModel.swift */,
+			);
+			path = "Match Details";
+			sourceTree = "<group>";
+		};
 		895CE68B2995F0E100150362 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +135,8 @@
 			children = (
 				899C8F4529948FE00001AC43 /* CricketZone */,
 				899C8F4429948FE00001AC43 /* Products */,
+				2A9D4C6C147FFE8B7C7046DD /* Pods */,
+				1446150A3703E7B33F1DC0DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +154,7 @@
 				899C8F4629948FE00001AC43 /* AppDelegate.swift */,
 				899C8F4829948FE00001AC43 /* SceneDelegate.swift */,
 				89E1DB742994E2E4008452C3 /* Constants.swift */,
+				35FAC67F2998027A0069DEB4 /* Match Details */,
 				895CE68B2995F0E100150362 /* API */,
 				899C8F642994A4990001AC43 /* Shared */,
 				899C8F632994A48A0001AC43 /* Home */,
@@ -136,8 +174,8 @@
 				899C8F5D2994A0E80001AC43 /* HomeViewController.swift */,
 				899C8F5F2994A1000001AC43 /* HomeViewModel.swift */,
 				899C8F612994A11E0001AC43 /* Home.storyboard */,
-				350014792995576B001D814C /* Recent Match Cell */,
 				3500147A299557A2001D814C /* Live Match Cell */,
+				350014792995576B001D814C /* Recent Match Cell */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -167,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 899C8F5A29948FE40001AC43 /* Build configuration list for PBXNativeTarget "CricketZone" */;
 			buildPhases = (
+				E207192C0CCA923D80C5A9BD /* [CP] Check Pods Manifest.lock */,
 				899C8F3F29948FE00001AC43 /* Sources */,
 				899C8F4029948FE00001AC43 /* Frameworks */,
 				899C8F4129948FE00001AC43 /* Resources */,
+				8DF088E4451B07C8362390CE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,6 +270,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8DF088E4451B07C8362390CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CricketZone/Pods-CricketZone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CricketZone/Pods-CricketZone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CricketZone/Pods-CricketZone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E207192C0CCA923D80C5A9BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CricketZone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		899C8F3F29948FE00001AC43 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -237,8 +319,10 @@
 			files = (
 				899C8F662994A4AC0001AC43 /* Shared.swift in Sources */,
 				899C8F5129948FE00001AC43 /* CricketZone.xcdatamodeld in Sources */,
+				35FAC67E299802740069DEB4 /* MatchDetailsViewController.swift in Sources */,
 				895CE68F2996064200150362 /* cricketAPIConfig.swift in Sources */,
 				899C8F702994CCE00001AC43 /* LiveMatchCVCell.swift in Sources */,
+				35FAC681299802910069DEB4 /* MatchDetailsViewModel.swift in Sources */,
 				899C8F4729948FE00001AC43 /* AppDelegate.swift in Sources */,
 				899C8F4929948FE00001AC43 /* SceneDelegate.swift in Sources */,
 				89E1DB80299522DB008452C3 /* RecentMatchTVCell.swift in Sources */,
@@ -390,6 +474,7 @@
 		};
 		899C8F5B29948FE40001AC43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 031C575EC0964D1EC9F7ACAD /* Pods-CricketZone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -418,6 +503,7 @@
 		};
 		899C8F5C29948FE40001AC43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FAE0122A389898F2860FB95 /* Pods-CricketZone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

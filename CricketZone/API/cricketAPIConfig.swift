@@ -23,6 +23,7 @@ final class cricketAPIConfig {
         components?.queryItems = [
             URLQueryItem(name: "include", value: "runs,localteam,visitorteam"),
             URLQueryItem(name: "filter[status]", value: "NS"),
+            URLQueryItem(name: "sort", value: "starting_at"),
             URLQueryItem(name: "fields[teams]", value: "code,image_path"),
             URLQueryItem(name: "fields[fixtures]", value: "id,type,starting_at"),
             URLQueryItem(name: "api_token", value: apiKey)

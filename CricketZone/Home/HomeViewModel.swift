@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 
@@ -59,6 +60,20 @@ class HomeViewModel {
                 self.recentMatchList = match.data
             }
         }
+    }
+    
+    func goToMatchDetailsPage(indexpath: IndexPath, originVC: HomeViewController) {
+        let matchDetailsVC = UIStoryboard(
+            name: "Home", bundle: nil
+        ).instantiateViewController(withIdentifier: Constants.matchDetailsVCId)
+            as? MatchDetailsViewController
+
+        guard let matchDetailsVC = matchDetailsVC else { return }
+
+        matchDetailsVC.loadViewIfNeeded()
+
+        //newsDetailsVC.newsDetailsViewModel.setNewsDetails(newsDetails: newsList.value?[indexpath.row])
+        originVC.navigationController?.pushViewController(matchDetailsVC, animated: true)
     }
     
 }

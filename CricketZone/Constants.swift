@@ -10,7 +10,7 @@ import Foundation
 class Constants {
     static let liveMatchCVCellId = "LiveMatchCVCell"
     static let recentMatchTVCellId = "RecentMatchTVCell"
-    
+    static let matchDetailsVCId = "MatchDetailsVC"
 }
 
 

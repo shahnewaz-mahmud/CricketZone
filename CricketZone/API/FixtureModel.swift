@@ -17,6 +17,7 @@ struct Match: Codable {
     let id: Int?
     let starting_at: String?
     let type: String?
+    let note: String?
     let localteam: Team?
     let visitorteam: Team?
     let runs: [Run]

@@ -167,6 +167,7 @@
             </constraints>
             <size key="customSize" width="400" height="220"/>
             <connections>
+                <outlet property="countDownText" destination="QH4-6Q-Fj6" id="WWA-QG-R0p"/>
                 <outlet property="league" destination="KlU-Y2-dVi" id="c8U-dt-svY"/>
                 <outlet property="liveLabelImg" destination="eIK-nf-Ibq" id="vua-J7-EAY"/>
                 <outlet property="matchBackgroundView" destination="f4i-C4-uRl" id="FxR-v1-mcb"/>

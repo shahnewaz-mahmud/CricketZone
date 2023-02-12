@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class RecentMatchTVCell: UITableViewCell {
     
@@ -44,6 +45,18 @@ class RecentMatchTVCell: UITableViewCell {
         matchDate.text = dateTime.1 + ", " + dateTime.0
         team1Score.text = String(matchInfo.runs[0].score ?? 0)+"/"
         team1Over.text = "("+String(matchInfo.runs[0].overs ?? 0)+")"
+        team2Score.text = String(matchInfo.runs[1].score ?? 0)+"/"
+        team2Over.text = "("+String(matchInfo.runs[1].overs ?? 0)+")"
+        team1Flag.sd_setImage(
+            with: URL(string: matchInfo.localteam?.image_path ?? ""),
+            placeholderImage: UIImage(named: "f1")
+        )
+        team2Flag.sd_setImage(
+            with: URL(string: matchInfo.visitorteam?.image_path ?? ""),
+            placeholderImage: UIImage(named: "f1")
+        )
+        
+        matchResult.text = matchInfo.note
 
     }
     
