@@ -62,7 +62,7 @@ class HomeViewModel {
         }
     }
     
-    func goToMatchDetailsPage(indexpath: IndexPath, originVC: HomeViewController) {
+    func goToMatchDetailsPage(matchId: Int, originVC: HomeViewController) {
         let matchDetailsVC = UIStoryboard(
             name: "Home", bundle: nil
         ).instantiateViewController(withIdentifier: Constants.matchDetailsVCId)
@@ -70,7 +70,8 @@ class HomeViewModel {
 
         guard let matchDetailsVC = matchDetailsVC else { return }
 
-        matchDetailsVC.loadViewIfNeeded()
+        //matchDetailsVC.loadViewIfNeeded()
+        matchDetailsVC.selectedMatchId = matchId
 
         //newsDetailsVC.newsDetailsViewModel.setNewsDetails(newsDetails: newsList.value?[indexpath.row])
         originVC.navigationController?.pushViewController(matchDetailsVC, animated: true)

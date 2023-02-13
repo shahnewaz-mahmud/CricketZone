@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "EB9AEDC2-6993-493B-B04F-6973D4793662"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B14E4A5A-51C0-435F-A011-81D9339E1495"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricketZone/Match Details/MatchDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "setupBinder()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B41D8AD1-8933-49DA-B253-9F17DFF9FFF7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricketZone/Match Details/MatchDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "setupBinder()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9F2CF635-6837-46DA-A7A0-9CED8BD0810E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricketZone/Match Details/MatchDetailsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "fetchMatchDetails(matchId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A0074001-B2DA-4525-83D8-014B90DCB530"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricketZone/Match Details/MatchDetailsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "MatchDetailsViewModel"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "A0074001-B2DA-4525-83D8-014B90DCB530 - 61325e31b66732c1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of CricketZone.MatchDetailsViewModel.matchInfo : Swift.Optional&lt;CricketZone.MatchData&gt;"
+                  moduleName = "CricketZone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bjit/Documents/Works/2023/FInal%20Project/CricketZone/CricketZone/Match%20Details/MatchDetailsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "A0074001-B2DA-4525-83D8-014B90DCB530 - d95bc3610f6d1d56"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CricketZone.MatchDetailsViewModel.init() -&gt; CricketZone.MatchDetailsViewModel"
+                  moduleName = "CricketZone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bjit/Documents/Works/2023/FInal%20Project/CricketZone/CricketZone/Match%20Details/MatchDetailsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "2269">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4448B42C-261F-4CDA-B994-16B218992781"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricketZone/Match Details/MatchDetailsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "MatchDetailsViewModel"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "4448B42C-261F-4CDA-B994-16B218992781 - 835e2bfb1ee50f5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of CricketZone.MatchDetailsViewModel.matchDetails : Swift.Optional&lt;CricketZone.MatchData&gt;"
+                  moduleName = "CricketZone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bjit/Documents/Works/2023/FInal%20Project/CricketZone/CricketZone/Match%20Details/MatchDetailsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "4448B42C-261F-4CDA-B994-16B218992781 - d95bc3610f6d1d77"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CricketZone.MatchDetailsViewModel.init() -&gt; CricketZone.MatchDetailsViewModel"
+                  moduleName = "CricketZone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bjit/Documents/Works/2023/FInal%20Project/CricketZone/CricketZone/Match%20Details/MatchDetailsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "116">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

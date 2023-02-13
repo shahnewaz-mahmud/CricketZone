@@ -13,6 +13,7 @@
 		895CE68A2995EA8000150362 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895CE6892995EA8000150362 /* APIService.swift */; };
 		895CE68D299601B200150362 /* FixtureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895CE68C299601B200150362 /* FixtureModel.swift */; };
 		895CE68F2996064200150362 /* cricketAPIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895CE68E2996064200150362 /* cricketAPIConfig.swift */; };
+		899C341F2999DC6200E18031 /* MatchDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C341E2999DC6200E18031 /* MatchDetailsModel.swift */; };
 		899C8F4729948FE00001AC43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C8F4629948FE00001AC43 /* AppDelegate.swift */; };
 		899C8F4929948FE00001AC43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C8F4829948FE00001AC43 /* SceneDelegate.swift */; };
 		899C8F4E29948FE00001AC43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 899C8F4C29948FE00001AC43 /* Main.storyboard */; };
@@ -27,6 +28,9 @@
 		899C8F6C2994C21B0001AC43 /* FixtureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C8F6B2994C21B0001AC43 /* FixtureViewModel.swift */; };
 		899C8F702994CCE00001AC43 /* LiveMatchCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C8F6E2994CCE00001AC43 /* LiveMatchCVCell.swift */; };
 		899C8F712994CCE00001AC43 /* LiveMatchCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 899C8F6F2994CCE00001AC43 /* LiveMatchCVCell.xib */; };
+		89D37C3F299A356C0059C1D0 /* MatchInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D37C3E299A356C0059C1D0 /* MatchInfoViewController.swift */; };
+		89D37C43299A37130059C1D0 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D37C41299A37120059C1D0 /* InfoTableViewCell.swift */; };
+		89D37C44299A37130059C1D0 /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89D37C42299A37130059C1D0 /* InfoTableViewCell.xib */; };
 		89E1DB732994DEB9008452C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89E1DB722994DEB9008452C3 /* Assets.xcassets */; };
 		89E1DB752994E2E4008452C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1DB742994E2E4008452C3 /* Constants.swift */; };
 		89E1DB80299522DB008452C3 /* RecentMatchTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E1DB7E299522DB008452C3 /* RecentMatchTVCell.swift */; };
@@ -42,6 +46,7 @@
 		895CE6892995EA8000150362 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		895CE68C299601B200150362 /* FixtureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureModel.swift; sourceTree = "<group>"; };
 		895CE68E2996064200150362 /* cricketAPIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cricketAPIConfig.swift; sourceTree = "<group>"; };
+		899C341E2999DC6200E18031 /* MatchDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailsModel.swift; sourceTree = "<group>"; };
 		899C8F4329948FE00001AC43 /* CricketZone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CricketZone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		899C8F4629948FE00001AC43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		899C8F4829948FE00001AC43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +63,9 @@
 		899C8F6B2994C21B0001AC43 /* FixtureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureViewModel.swift; sourceTree = "<group>"; };
 		899C8F6E2994CCE00001AC43 /* LiveMatchCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveMatchCVCell.swift; sourceTree = "<group>"; };
 		899C8F6F2994CCE00001AC43 /* LiveMatchCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveMatchCVCell.xib; sourceTree = "<group>"; };
+		89D37C3E299A356C0059C1D0 /* MatchInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoViewController.swift; sourceTree = "<group>"; };
+		89D37C41299A37120059C1D0 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		89D37C42299A37130059C1D0 /* InfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell.xib; sourceTree = "<group>"; };
 		89E1DB722994DEB9008452C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89E1DB742994E2E4008452C3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		89E1DB7E299522DB008452C3 /* RecentMatchTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchTVCell.swift; sourceTree = "<group>"; };
@@ -116,6 +124,7 @@
 			children = (
 				35FAC67D299802740069DEB4 /* MatchDetailsViewController.swift */,
 				35FAC680299802910069DEB4 /* MatchDetailsViewModel.swift */,
+				89D37C40299A35740059C1D0 /* Match Info */,
 			);
 			path = "Match Details";
 			sourceTree = "<group>";
@@ -125,6 +134,7 @@
 			children = (
 				895CE6892995EA8000150362 /* APIService.swift */,
 				895CE68C299601B200150362 /* FixtureModel.swift */,
+				899C341E2999DC6200E18031 /* MatchDetailsModel.swift */,
 				895CE68E2996064200150362 /* cricketAPIConfig.swift */,
 			);
 			path = API;
@@ -154,9 +164,9 @@
 				899C8F4629948FE00001AC43 /* AppDelegate.swift */,
 				899C8F4829948FE00001AC43 /* SceneDelegate.swift */,
 				89E1DB742994E2E4008452C3 /* Constants.swift */,
-				35FAC67F2998027A0069DEB4 /* Match Details */,
-				895CE68B2995F0E100150362 /* API */,
 				899C8F642994A4990001AC43 /* Shared */,
+				895CE68B2995F0E100150362 /* API */,
+				35FAC67F2998027A0069DEB4 /* Match Details */,
 				899C8F632994A48A0001AC43 /* Home */,
 				899C8F6D2994C2F60001AC43 /* Fixture */,
 				899C8F4C29948FE00001AC43 /* Main.storyboard */,
@@ -196,6 +206,16 @@
 				899C8F6B2994C21B0001AC43 /* FixtureViewModel.swift */,
 			);
 			path = Fixture;
+			sourceTree = "<group>";
+		};
+		89D37C40299A35740059C1D0 /* Match Info */ = {
+			isa = PBXGroup;
+			children = (
+				89D37C3E299A356C0059C1D0 /* MatchInfoViewController.swift */,
+				89D37C41299A37120059C1D0 /* InfoTableViewCell.swift */,
+				89D37C42299A37130059C1D0 /* InfoTableViewCell.xib */,
+			);
+			path = "Match Info";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +283,7 @@
 				899C8F712994CCE00001AC43 /* LiveMatchCVCell.xib in Resources */,
 				899C8F4E29948FE00001AC43 /* Main.storyboard in Resources */,
 				89E1DB81299522DB008452C3 /* RecentMatchTVCell.xib in Resources */,
+				89D37C44299A37130059C1D0 /* InfoTableViewCell.xib in Resources */,
 				89E1DB732994DEB9008452C3 /* Assets.xcassets in Resources */,
 				899C8F622994A11E0001AC43 /* Home.storyboard in Resources */,
 			);
@@ -321,16 +342,19 @@
 				899C8F5129948FE00001AC43 /* CricketZone.xcdatamodeld in Sources */,
 				35FAC67E299802740069DEB4 /* MatchDetailsViewController.swift in Sources */,
 				895CE68F2996064200150362 /* cricketAPIConfig.swift in Sources */,
+				89D37C3F299A356C0059C1D0 /* MatchInfoViewController.swift in Sources */,
 				899C8F702994CCE00001AC43 /* LiveMatchCVCell.swift in Sources */,
 				35FAC681299802910069DEB4 /* MatchDetailsViewModel.swift in Sources */,
 				899C8F4729948FE00001AC43 /* AppDelegate.swift in Sources */,
 				899C8F4929948FE00001AC43 /* SceneDelegate.swift in Sources */,
 				89E1DB80299522DB008452C3 /* RecentMatchTVCell.swift in Sources */,
 				899C8F6C2994C21B0001AC43 /* FixtureViewModel.swift in Sources */,
+				89D37C43299A37130059C1D0 /* InfoTableViewCell.swift in Sources */,
 				899C8F682994BD9F0001AC43 /* FixtureViewController.swift in Sources */,
 				89E1DB752994E2E4008452C3 /* Constants.swift in Sources */,
 				899C8F602994A1000001AC43 /* HomeViewModel.swift in Sources */,
 				895CE68A2995EA8000150362 /* APIService.swift in Sources */,
+				899C341F2999DC6200E18031 /* MatchDetailsModel.swift in Sources */,
 				899C8F5E2994A0E80001AC43 /* HomeViewController.swift in Sources */,
 				895CE68D299601B200150362 /* FixtureModel.swift in Sources */,
 			);

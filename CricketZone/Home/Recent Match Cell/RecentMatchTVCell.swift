@@ -43,10 +43,21 @@ class RecentMatchTVCell: UITableViewCell {
         team2Code.text = matchInfo.visitorteam?.code
         let dateTime = Shared().getReadableDateTime(data: matchInfo.starting_at ?? "")
         matchDate.text = dateTime.1 + ", " + dateTime.0
-        team1Score.text = String(matchInfo.runs[0].score ?? 0)+"/"
-        team1Over.text = "("+String(matchInfo.runs[0].overs ?? 0)+")"
-        team2Score.text = String(matchInfo.runs[1].score ?? 0)+"/"
-        team2Over.text = "("+String(matchInfo.runs[1].overs ?? 0)+")"
+        
+        if(matchInfo.localteam_id == matchInfo.runs[0].team_id) {
+            team1Score.text = String(matchInfo.runs[0].score ?? 0)+"/"
+            team1Over.text = "("+String(matchInfo.runs[0].overs ?? 0)+")"
+            
+            team2Score.text = String(matchInfo.runs[1].score ?? 0)+"/"
+            team2Over.text = "("+String(matchInfo.runs[1].overs ?? 0)+")"
+        } else {
+            team1Score.text = String(matchInfo.runs[1].score ?? 0)+"/"
+            team1Over.text = "("+String(matchInfo.runs[1].overs ?? 0)+")"
+            
+            team2Score.text = String(matchInfo.runs[0].score ?? 0)+"/"
+            team2Over.text = "("+String(matchInfo.runs[0].overs ?? 0)+")"
+        }
+        
         team1Flag.sd_setImage(
             with: URL(string: matchInfo.localteam?.image_path ?? ""),
             placeholderImage: UIImage(named: "f1")

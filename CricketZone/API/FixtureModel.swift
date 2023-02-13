@@ -18,6 +18,7 @@ struct Match: Codable {
     let starting_at: String?
     let type: String?
     let note: String?
+    let localteam_id, visitorteam_id: Int?
     let localteam: Team?
     let visitorteam: Team?
     let runs: [Run]
@@ -31,7 +32,7 @@ struct Team: Codable {
 }
 
 struct Run: Codable {
-    let id, fixtureID, teamID, inning: Int?
+    let id, fixture_id, team_id, inning: Int?
     let score, wickets: Int?
     let overs: Double?
 }

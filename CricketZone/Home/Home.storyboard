@@ -127,7 +127,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="iqD-0z-pjW">
                                                 <rect key="frame" x="45" y="88.333333333333314" width="60" height="98"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BD Flag" translatesAutoresizingMaskIntoConstraints="NO" id="6Ni-7l-erE">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="teamLogo" translatesAutoresizingMaskIntoConstraints="NO" id="6Ni-7l-erE">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                         <color key="backgroundColor" name="Solid White"/>
                                                     </imageView>
@@ -159,7 +159,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="7D4-Gn-fbk">
                                                 <rect key="frame" x="284" y="88.333333333333343" width="60" height="99.333333333333343"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BD Flag" translatesAutoresizingMaskIntoConstraints="NO" id="BQY-fy-D6f">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="teamLogo" translatesAutoresizingMaskIntoConstraints="NO" id="BQY-fy-D6f">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                         <color key="backgroundColor" name="Solid White"/>
                                                     </imageView>
@@ -207,7 +207,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.80389293140133489" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.79975456591473515" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="yZF-Qt-LDB" firstAttribute="centerX" secondItem="cD2-GH-AfQ" secondAttribute="centerX" id="0sy-Ec-ZL2"/>
                                             <constraint firstAttribute="trailing" secondItem="7D4-Gn-fbk" secondAttribute="trailing" constant="46" id="4au-ow-GbF"/>
@@ -401,8 +401,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ContentView" destination="08k-RG-3KQ" id="l9l-nz-H8a"/>
-                        <outlet property="LeagueName" destination="tZT-nn-84B" id="GRX-HI-HeL"/>
+                        <outlet property="contentView" destination="08k-RG-3KQ" id="l9l-nz-H8a"/>
+                        <outlet property="leagueName" destination="tZT-nn-84B" id="GRX-HI-HeL"/>
                         <outlet property="matchDate" destination="ISg-EP-5VC" id="Jdl-9O-oSq"/>
                         <outlet property="matchInfoBtnIcon" destination="PJL-vb-OFC" id="JiB-MG-XGp"/>
                         <outlet property="matchInfoBtnText" destination="vHG-lw-zgV" id="uQM-H7-uVZ"/>
@@ -452,38 +452,41 @@
             </objects>
             <point key="canvasLocation" x="956.52173913043487" y="70.3125"/>
         </scene>
-        <!--View Controller-->
+        <!--Match Info View Controller-->
         <scene sceneID="K7p-TX-9ND">
             <objects>
-                <viewController id="wj5-04-7bP" sceneMemberID="viewController">
+                <viewController id="wj5-04-7bP" customClass="MatchInfoViewController" customModule="CricketZone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rYc-5J-Btx">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="471"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="471.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQu-0w-NAU">
-                                <rect key="frame" x="180.66666666666666" y="225.33333333333334" width="29" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9NZ-2T-Q0b">
+                                <rect key="frame" x="0.0" y="10" width="390" height="451.33333333333331"/>
+                            </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="5vo-wN-1S0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gQu-0w-NAU" firstAttribute="centerX" secondItem="rYc-5J-Btx" secondAttribute="centerX" id="gKL-OP-Ta5"/>
-                            <constraint firstItem="gQu-0w-NAU" firstAttribute="centerY" secondItem="rYc-5J-Btx" secondAttribute="centerY" id="ueV-yj-pdz"/>
+                            <constraint firstItem="9NZ-2T-Q0b" firstAttribute="top" secondItem="rYc-5J-Btx" secondAttribute="top" constant="10" id="TWb-LE-Ion"/>
+                            <constraint firstItem="9NZ-2T-Q0b" firstAttribute="leading" secondItem="5vo-wN-1S0" secondAttribute="leading" id="cpd-iD-3Wa"/>
+                            <constraint firstItem="9NZ-2T-Q0b" firstAttribute="centerX" secondItem="rYc-5J-Btx" secondAttribute="centerX" id="dtw-x2-Nev"/>
+                            <constraint firstItem="9NZ-2T-Q0b" firstAttribute="centerY" secondItem="rYc-5J-Btx" secondAttribute="centerY" id="g5l-v3-SCO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="9NZ-2T-Q0b" id="cpl-ii-JHQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Bc-4O-45M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1829" y="714"/>
+            <point key="canvasLocation" x="1827.6923076923076" y="712.67772511848341"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ddS-Tr-DAT">
             <objects>
                 <viewController id="2Wb-dU-0j1" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VYp-Ho-AmY">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="471"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="471.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfC-20-4ia">
@@ -493,6 +496,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ur7-jx-rip"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="LfC-20-4ia" firstAttribute="centerX" secondItem="VYp-Ho-AmY" secondAttribute="centerX" id="ecu-Ef-SLl"/>
@@ -509,7 +513,7 @@
             <objects>
                 <viewController id="WuY-tS-7T5" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A11-AZ-q48">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="471"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="471.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Over" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7E-zK-8PX">
@@ -519,6 +523,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="qEf-L0-qUb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="e7E-zK-8PX" firstAttribute="centerY" secondItem="A11-AZ-q48" secondAttribute="centerY" id="XQn-S7-HCd"/>
@@ -535,7 +540,7 @@
             <objects>
                 <viewController id="MHi-mc-aSl" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6tq-cD-YTS">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="471"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="471.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Squad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xc8-Kk-l79">
@@ -545,6 +550,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="2Fs-a1-HV9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Xc8-Kk-l79" firstAttribute="centerX" secondItem="6tq-cD-YTS" secondAttribute="centerX" id="AyY-3d-5Kh"/>
@@ -558,7 +564,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BD Flag" width="1200" height="720"/>
         <image name="bell" catalog="system" width="128" height="124"/>
         <image name="circle.inset.filled" catalog="system" width="128" height="121"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
@@ -567,11 +572,12 @@
         <image name="number.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="stadium" width="814" height="454"/>
+        <image name="teamLogo" width="888" height="878"/>
         <namedColor name="Secondary Color">
             <color red="0.030999999493360519" green="0.093999996781349182" blue="0.22400000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Secondary Dual Mode">
-            <color red="0.031372549019607843" green="0.094117647058823528" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.030999999493360519" green="0.093999996781349182" blue="0.22400000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Solid White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
