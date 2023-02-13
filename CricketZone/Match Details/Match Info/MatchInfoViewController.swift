@@ -31,10 +31,8 @@ class MatchInfoViewController: UIViewController {
     
     
     func setupBinder() {
-        MatchDetailsViewController.matchDetailsViewModel.$matchInfo.sink { [weak self] matchDetails in
-            
-            guard let matchDetails = matchDetails else {return}
-            
+        MatchDetailsViewController.matchDetailsViewModel.$matchInfo.sink { [weak self] _ in
+
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
@@ -45,10 +43,23 @@ class MatchInfoViewController: UIViewController {
 
 extension MatchInfoViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        
+        if section == 0 {
+            return 1
+        } else if section == 1 {
+            if MatchDetailsViewController.matchDetailsViewModel.matchDetails?.status == "NS" {
+                return 0
+            } else {
+                return 1
+            }
+        } else if section == 2 {
+            return 1
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,8 +71,10 @@ extension MatchInfoViewController: UITableViewDataSource {
             
             basicInfoCell.headerLabel.text = MatchDetailsViewController.matchDetailsViewModel.matchDetails?.league?.name
             basicInfoCell.subHeaderLabel.text = MatchDetailsViewController.matchDetailsViewModel.matchDetails?.stage?.name
-            basicInfoCell.label3.text = MatchDetailsViewController.matchDetailsViewModel.matchDetails?.season?.name
-            basicInfoCell.label4.text = MatchDetailsViewController.matchDetailsViewModel.matchDetails?.round
+            basicInfoCell.label3.text = "Season: " + (MatchDetailsViewController.matchDetailsViewModel.matchDetails?.season?.name ?? "")
+            basicInfoCell.label4.text = "Round: " + (MatchDetailsViewController.matchDetailsViewModel.matchDetails?.round ?? "")
+            let dateTime = Shared().getReadableDateTime(data: MatchDetailsViewController.matchDetailsViewModel.matchDetails?.starting_at ?? "")
+            basicInfoCell.label5.text = "Time: " + dateTime.1 + ", " + dateTime.0
             basicInfoCell.CellImageView.sd_setImage(
                 with: URL(string: MatchDetailsViewController.matchDetailsViewModel.matchDetails?.league?.image_path ?? ""),
                 placeholderImage: UIImage(named: "f1")
@@ -69,15 +82,29 @@ extension MatchInfoViewController: UITableViewDataSource {
             
             return basicInfoCell
         case 1:
-            let sectionTwoCell = tableView.dequeueReusableCell(withIdentifier: Constants.infoTableViewCellId, for: indexPath) as? InfoTableViewCell
-            guard let sectionTwoCell = sectionTwoCell else {return UITableViewCell()}
-            // Configure the cell for section two
-            return sectionTwoCell
+            let tossResultCell = tableView.dequeueReusableCell(withIdentifier: Constants.infoTableViewCellId, for: indexPath) as? InfoTableViewCell
+            guard let tossResultCell = tossResultCell else {return UITableViewCell()}
+            tossResultCell.CellImageView.image = UIImage(named: "toss")
+            tossResultCell.subHeaderLabel.text = (MatchDetailsViewController.matchDetailsViewModel.matchDetails?.tosswon?.name ?? "") + " Won the Toss and Elected " + (MatchDetailsViewController.matchDetailsViewModel.matchDetails?.elected ?? "")
+            tossResultCell.headerLabel.text = ""
+            tossResultCell.label3.text = ""
+            tossResultCell.label4.text = ""
+            tossResultCell.label5.text = ""
+            return tossResultCell
         case 2:
-            let sectionThreeCell = tableView.dequeueReusableCell(withIdentifier: Constants.infoTableViewCellId, for: indexPath) as? InfoTableViewCell
-            guard let sectionThreeCell = sectionThreeCell else {return UITableViewCell()}
-            // Configure the cell for section three
-            return sectionThreeCell
+            let venueCell = tableView.dequeueReusableCell(withIdentifier: Constants.infoTableViewCellId, for: indexPath) as? InfoTableViewCell
+            guard let venueCell = venueCell else {return UITableViewCell()}
+            venueCell.headerLabel.text = ""
+            venueCell.subHeaderLabel.text = "Venue: " + (MatchDetailsViewController.matchDetailsViewModel.matchDetails?.venue?.name ?? "")
+            venueCell.label3.text = "City: " + (MatchDetailsViewController.matchDetailsViewModel.matchDetails?.venue?.city ?? "")
+            venueCell.label4.text = "Capacity: " + String(MatchDetailsViewController.matchDetailsViewModel.matchDetails?.venue?.capacity ?? 0)
+            venueCell.label5.text = ""
+            venueCell.CellImageView.sd_setImage(
+                with: URL(string: MatchDetailsViewController.matchDetailsViewModel.matchDetails?.venue?.image_path ?? ""),
+                placeholderImage: UIImage(named: "f1")
+            )
+            
+            return venueCell
         default:
             return UITableViewCell()
         }
