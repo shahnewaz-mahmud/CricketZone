@@ -72,7 +72,7 @@ class LiveMatchCVCell: UICollectionViewCell {
             formatter.allowedUnits = [.day, .hour, .minute, .second]
             formatter.zeroFormattingBehavior = .dropAll
             formatter.unitsStyle = .abbreviated
-            formatter.maximumUnitCount = 4
+            formatter.maximumUnitCount = 3
 
             let formattedDuration = formatter.string(from: timeInterval)
             

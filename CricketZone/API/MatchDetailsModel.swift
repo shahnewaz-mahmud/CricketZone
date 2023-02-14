@@ -46,8 +46,23 @@ struct League: Codable {
     let image_path: String?
     let type: String?
     let national_team: Bool?
+    let results: [MatchResult]?
     let league_id: Int?
     let standings: Bool?
+}
+
+
+// MARK: - Result
+struct MatchResult: Codable {
+    let id, league_id, season_id, stage_id: Int?
+    let round: String?
+    let localteam_id, visitorteam_id: Int?
+    let starting_at: String?
+    let type: String?
+    let status: String?
+    let note: String
+    let venueID, tossWonTeamID: Int?
+    let winner_team_id: Int?
 }
 
 // MARK: - Manofmatch

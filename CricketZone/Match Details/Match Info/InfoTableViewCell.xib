@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9z-cW-aaw">
-                        <rect key="frame" x="30" y="10" width="396" height="111"/>
+                        <rect key="frame" x="30" y="5" width="396" height="111"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vDg-cm-wa4">
                                 <rect key="frame" x="308" y="23" width="65" height="65"/>
@@ -78,19 +78,22 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" name="Main Color"/>
                 <constraints>
                     <constraint firstItem="r9z-cW-aaw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="HZb-0w-RFx"/>
                     <constraint firstItem="r9z-cW-aaw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="JQg-sg-qNW"/>
                     <constraint firstItem="r9z-cW-aaw" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Q3a-kZ-owh"/>
-                    <constraint firstAttribute="bottom" secondItem="r9z-cW-aaw" secondAttribute="bottom" constant="10" id="dFz-bo-Ceg"/>
+                    <constraint firstAttribute="bottom" secondItem="r9z-cW-aaw" secondAttribute="bottom" constant="5" id="dFz-bo-Ceg"/>
                     <constraint firstAttribute="trailing" secondItem="r9z-cW-aaw" secondAttribute="trailing" constant="30" id="qlK-QX-yzx"/>
-                    <constraint firstItem="r9z-cW-aaw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="tCI-C3-mFt"/>
+                    <constraint firstItem="r9z-cW-aaw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="tCI-C3-mFt"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="CellImageView" destination="vDg-cm-wa4" id="3sd-r2-K8E"/>
                 <outlet property="cellBackgroundView" destination="r9z-cW-aaw" id="02d-bi-8dO"/>
+                <outlet property="cellImageHeightConstraint" destination="2ko-zK-eTf" id="qej-oI-zTS"/>
+                <outlet property="cellImageWidthConstraint" destination="bJ0-eb-GBn" id="iwk-ss-fDD"/>
                 <outlet property="headerLabel" destination="f91-Dz-sxT" id="F4b-Dk-J5U"/>
                 <outlet property="label3" destination="5rc-uz-eN8" id="QI4-Cw-apX"/>
                 <outlet property="label4" destination="9Zo-f9-zgJ" id="kBP-bx-Bgy"/>

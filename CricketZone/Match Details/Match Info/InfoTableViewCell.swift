@@ -17,6 +17,10 @@ class InfoTableViewCell: UITableViewCell {
     @IBOutlet weak var CellImageView: UIImageView!
     @IBOutlet weak var cellBackgroundView: UIView!
     
+    @IBOutlet weak var cellImageHeightConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var cellImageWidthConstraint: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         cellBackgroundView.layer.cornerRadius = 20

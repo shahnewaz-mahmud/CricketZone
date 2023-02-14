@@ -12,6 +12,7 @@ class Constants {
     static let recentMatchTVCellId = "RecentMatchTVCell"
     static let matchDetailsVCId = "MatchDetailsVC"
     static let infoTableViewCellId = "InfoTableViewCell"
+    static let teamFormHeaderId = "TeamFormTVHeaderFooterView"
 }
 
 
