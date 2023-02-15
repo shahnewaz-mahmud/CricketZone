@@ -13,15 +13,15 @@ class ScoreCardTableViewCell: UITableViewCell {
     
     @IBOutlet weak var outInfo: UILabel!
     
-    @IBOutlet weak var run: UILabel!
+    @IBOutlet weak var score1: UILabel!
     
-    @IBOutlet weak var ball: UILabel!
+    @IBOutlet weak var score2: UILabel!
     
-    @IBOutlet weak var fours: UILabel!
+    @IBOutlet weak var score3: UILabel!
     
-    @IBOutlet weak var sixes: UILabel!
+    @IBOutlet weak var score4: UILabel!
     
-    @IBOutlet weak var strikeRate: UILabel!
+    @IBOutlet weak var score5: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
