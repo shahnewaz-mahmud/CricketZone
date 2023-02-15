@@ -1,6 +1,6 @@
 //
 //  ScoreCardViewModel.swift
-//  CricketZone
+//  CricketZone iOS APP
 //
 //  Created by BJIT on 2/15/23.
 //
