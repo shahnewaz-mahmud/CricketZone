@@ -61,7 +61,7 @@ final class cricketAPIConfig {
             components?.path += "/fixtures"
             components?.path += "/\(matchId)"
             components?.queryItems = [
-                URLQueryItem(name: "include", value: "runs,localteam,visitorteam,league, stage,season,venue,tosswon,winnerteam,manofmatch,localteam.results,visitorteam.results"),
+                URLQueryItem(name: "include", value: "runs,localteam,visitorteam,league, stage,season,venue,tosswon,winnerteam,manofmatch,localteam.results,visitorteam.results,batting.result, batting.batsman, bowling.bowler"),
                 URLQueryItem(name: "api_token", value: apiKey)
             ]
             guard let url = components?.url else { return nil }

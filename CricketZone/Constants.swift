@@ -13,6 +13,8 @@ class Constants {
     static let matchDetailsVCId = "MatchDetailsVC"
     static let infoTableViewCellId = "InfoTableViewCell"
     static let teamFormHeaderId = "TeamFormTVHeaderFooterView"
+    static let scoreCardHeaderId = "ScoreCardTVHeaderView"
+    static let scoreCardTableViewCellId = "ScoreCardTableViewCell"
 }
 
 

@@ -12,7 +12,7 @@ class MatchInfoViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var cancellables2: Set<AnyCancellable> = []
+    private var cancellables: Set<AnyCancellable> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +27,7 @@ class MatchInfoViewController: UIViewController {
 
     }
     
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        let topInset: CGFloat = 30.0 // Set your desired top inset value here
-//        let bottomInset: CGFloat = 30.0 // Set your desired bottom inset value here
-//        tableView.contentInset = UIEdgeInsets(top: -topInset, left: 0, bottom: -bottomInset, right: 0)
-//    }
-    
+
     func configureInfoCell(){
         let infoNib = UINib(nibName: Constants.infoTableViewCellId, bundle: nil)
         tableView.register(infoNib, forCellReuseIdentifier: Constants.infoTableViewCellId)
@@ -58,7 +52,7 @@ class MatchInfoViewController: UIViewController {
                 self?.tableView.reloadData()
             }
             
-        }.store(in: &cancellables2)
+        }.store(in: &cancellables)
     }
 }
 
@@ -188,6 +182,8 @@ extension MatchInfoViewController: UITableViewDataSource {
                         winrecords[i] = false
                     }
                 }
+                sectionHeader.teamFormLabel.text = "Team 1 Form"
+                
                 sectionHeader.teamName.text = MatchDetailsViewController.matchDetailsViewModel.matchDetails?.localteam?.name
                 
                 print(winrecords)
@@ -215,6 +211,7 @@ extension MatchInfoViewController: UITableViewDataSource {
                         winrecords[i] = false
                     }
                 }
+                team2FormSectionHeader.teamFormLabel.text = "Team 2 Form"
                 team2FormSectionHeader.teamName.text = MatchDetailsViewController.matchDetailsViewModel.matchDetails?.visitorteam?.name
                 
                 print(winrecords)

@@ -36,6 +36,8 @@ struct MatchData: Codable {
     let winnerteam, tosswon: League?
     let venue: Venue?
     let stage: League?
+    let batting: [Batting]
+    let bowling: [Bowling]
 }
 
 // MARK: - League
@@ -96,3 +98,42 @@ struct Venue: Codable {
     let capacity: Int?
     let floodlight: Bool?
 }
+
+// MARK: - Batting
+struct Batting: Codable {
+    let id,team_id: Int?
+    let active: Bool?
+    let player_id, ball, score: Int?
+    let four_x, six_x: Int?
+    let catch_stump_player_id: Int?
+    let runout_by_id, batsmanout_id: Int?
+    let bowling_player_id: Int?
+    let rate: Int?
+    let batsman: Batsman?
+    let result: OutStatus?
+}
+
+// MARK: - Batsman
+struct Batsman: Codable {
+    let id, country_id: Int?
+    let firstname, lastname, fullname: String?
+}
+
+// MARK: - Result
+struct OutStatus: Codable {
+    let name: String?
+
+}
+
+// MARK: - Bowling
+struct Bowling: Codable {
+    let id, sort, fixture_id, team_id: Int?
+    let active: Bool?
+    let player_id: Int?
+    let overs: Double?
+    let medians, runs, wickets, wide: Int?
+    let noball: Int?
+    let rate: Double?
+    let bowler: Batsman?
+}
+
