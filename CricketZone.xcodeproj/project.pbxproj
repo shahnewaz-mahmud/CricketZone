@@ -135,23 +135,60 @@
 			path = "Live Match Cell";
 			sourceTree = "<group>";
 		};
-		35FAC67F2998027A0069DEB4 /* Match Details */ = {
+		35331D1B299D43F300E5C6D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				35FAC67D299802740069DEB4 /* MatchDetailsViewController.swift */,
-				35FAC680299802910069DEB4 /* MatchDetailsViewModel.swift */,
-				89D37C40299A35740059C1D0 /* Match Info */,
+				895CE68C299601B200150362 /* FixtureModel.swift */,
+				899C341E2999DC6200E18031 /* MatchDetailsModel.swift */,
 			);
-			path = "Match Details";
+			path = Model;
+			sourceTree = "<group>";
+		};
+		35331D1C299D4EAA00E5C6D1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				899C8F5D2994A0E80001AC43 /* HomeViewController.swift */,
+				899C8F612994A11E0001AC43 /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		35331D1D299D4F7000E5C6D1 /* Team Form Header */ = {
+			isa = PBXGroup;
+			children = (
+				89D682E4299B625A00E19032 /* TeamFormTVHeaderFooterView.swift */,
+				89D682E6299B6E2500E19032 /* TeamFormTVHeaderFooterView.xib */,
+			);
+			path = "Team Form Header";
+			sourceTree = "<group>";
+		};
+		35331D1E299D4F8E00E5C6D1 /* Score Card Header */ = {
+			isa = PBXGroup;
+			children = (
+				892E20A9299C7B8000DECB9B /* ScoreCardTVHeaderView.swift */,
+				892E20AB299C7BAB00DECB9B /* ScoreCardTVHeaderView.xib */,
+			);
+			path = "Score Card Header";
+			sourceTree = "<group>";
+		};
+		35331D1F299D4FAC00E5C6D1 /* Score Card Cell */ = {
+			isa = PBXGroup;
+			children = (
+				892E20AD299C849800DECB9B /* ScoreCardTableViewCell.swift */,
+				892E20AE299C849800DECB9B /* ScoreCardTableViewCell.xib */,
+			);
+			path = "Score Card Cell";
 			sourceTree = "<group>";
 		};
 		892E20B1299C862900DECB9B /* Xib */ = {
 			isa = PBXGroup;
 			children = (
-				892E20A9299C7B8000DECB9B /* ScoreCardTVHeaderView.swift */,
-				892E20AB299C7BAB00DECB9B /* ScoreCardTVHeaderView.xib */,
-				892E20AD299C849800DECB9B /* ScoreCardTableViewCell.swift */,
-				892E20AE299C849800DECB9B /* ScoreCardTableViewCell.xib */,
+				89D37C40299A35740059C1D0 /* Match Info Cell */,
+				350014792995576B001D814C /* Recent Match Cell */,
+				3500147A299557A2001D814C /* Live Match Cell */,
+				35331D1E299D4F8E00E5C6D1 /* Score Card Header */,
+				35331D1D299D4F7000E5C6D1 /* Team Form Header */,
+				35331D1F299D4FAC00E5C6D1 /* Score Card Cell */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -159,7 +196,10 @@
 		892E20B2299CA1D800DECB9B /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				899C8F5F2994A1000001AC43 /* HomeViewModel.swift */,
+				899C8F6B2994C21B0001AC43 /* FixtureViewModel.swift */,
 				892E20B3299CA21900DECB9B /* ScoreCardViewModel.swift */,
+				35FAC680299802910069DEB4 /* MatchDetailsViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -168,8 +208,6 @@
 			isa = PBXGroup;
 			children = (
 				895CE6892995EA8000150362 /* APIService.swift */,
-				895CE68C299601B200150362 /* FixtureModel.swift */,
-				899C341E2999DC6200E18031 /* MatchDetailsModel.swift */,
 				895CE68E2996064200150362 /* cricketAPIConfig.swift */,
 			);
 			path = API;
@@ -201,30 +239,14 @@
 				89E1DB742994E2E4008452C3 /* Constants.swift */,
 				899C8F642994A4990001AC43 /* Shared */,
 				895CE68B2995F0E100150362 /* API */,
+				35331D1B299D43F300E5C6D1 /* Model */,
 				89D682E3299B613300E19032 /* View */,
 				892E20B2299CA1D800DECB9B /* View Model */,
-				35FAC67F2998027A0069DEB4 /* Match Details */,
-				899C8F632994A48A0001AC43 /* Home */,
-				899C8F6D2994C2F60001AC43 /* Fixture */,
-				899C8F4C29948FE00001AC43 /* Main.storyboard */,
 				89E1DB722994DEB9008452C3 /* Assets.xcassets */,
-				899C8F5429948FE40001AC43 /* LaunchScreen.storyboard */,
 				899C8F5729948FE40001AC43 /* Info.plist */,
 				899C8F4F29948FE00001AC43 /* CricketZone.xcdatamodeld */,
 			);
 			path = CricketZone;
-			sourceTree = "<group>";
-		};
-		899C8F632994A48A0001AC43 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				899C8F5D2994A0E80001AC43 /* HomeViewController.swift */,
-				899C8F5F2994A1000001AC43 /* HomeViewModel.swift */,
-				899C8F612994A11E0001AC43 /* Home.storyboard */,
-				3500147A299557A2001D814C /* Live Match Cell */,
-				350014792995576B001D814C /* Recent Match Cell */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		899C8F642994A4990001AC43 /* Shared */ = {
@@ -240,28 +262,30 @@
 			children = (
 				899C8F672994BD9F0001AC43 /* FixtureViewController.swift */,
 				899C8F692994BDC60001AC43 /* Fixture.storyboard */,
-				899C8F6B2994C21B0001AC43 /* FixtureViewModel.swift */,
 			);
 			path = Fixture;
 			sourceTree = "<group>";
 		};
-		89D37C40299A35740059C1D0 /* Match Info */ = {
+		89D37C40299A35740059C1D0 /* Match Info Cell */ = {
 			isa = PBXGroup;
 			children = (
-				89D37C3E299A356C0059C1D0 /* MatchInfoViewController.swift */,
 				89D37C41299A37120059C1D0 /* InfoTableViewCell.swift */,
 				89D37C42299A37130059C1D0 /* InfoTableViewCell.xib */,
 			);
-			path = "Match Info";
+			path = "Match Info Cell";
 			sourceTree = "<group>";
 		};
 		89D682E3299B613300E19032 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				892E20B1299C862900DECB9B /* Xib */,
-				89D682E4299B625A00E19032 /* TeamFormTVHeaderFooterView.swift */,
-				89D682E6299B6E2500E19032 /* TeamFormTVHeaderFooterView.xib */,
+				35331D1C299D4EAA00E5C6D1 /* Home */,
+				899C8F6D2994C2F60001AC43 /* Fixture */,
+				35FAC67D299802740069DEB4 /* MatchDetailsViewController.swift */,
+				89D37C3E299A356C0059C1D0 /* MatchInfoViewController.swift */,
 				892E20A7299C75CF00DECB9B /* ScoreCardViewController.swift */,
+				899C8F4C29948FE00001AC43 /* Main.storyboard */,
+				899C8F5429948FE40001AC43 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";

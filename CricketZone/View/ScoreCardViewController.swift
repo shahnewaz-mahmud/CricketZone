@@ -136,10 +136,7 @@ extension ScoreCardViewController: UITableViewDataSource {
         }
         
     }
-        
-    
-    
-    
+ 
     //Header
     
     //For tableView Section Header
@@ -174,7 +171,7 @@ extension ScoreCardViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 70
+        return 60
     }
 }
 
