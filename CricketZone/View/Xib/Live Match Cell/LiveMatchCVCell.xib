@@ -172,6 +172,7 @@
                 <outlet property="liveLabelImg" destination="eIK-nf-Ibq" id="vua-J7-EAY"/>
                 <outlet property="matchBackgroundView" destination="f4i-C4-uRl" id="FxR-v1-mcb"/>
                 <outlet property="matchTime" destination="xsf-2X-2FA" id="A7h-WW-ucn"/>
+                <outlet property="startsInlabel" destination="ovW-Yn-d1W" id="76z-WJ-LtU"/>
                 <outlet property="team1Code" destination="C0y-Ww-weI" id="G8S-DY-aBI"/>
                 <outlet property="team1Flag" destination="Y3K-NG-TYl" id="Bnd-1p-pXh"/>
                 <outlet property="team1Over" destination="Knw-W9-Wua" id="seu-hW-RMz"/>

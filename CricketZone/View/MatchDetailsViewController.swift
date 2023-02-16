@@ -32,7 +32,6 @@ class MatchDetailsViewController: UIViewController {
     @IBOutlet weak var matchInfoBtnIcon: UIButton!
     @IBOutlet weak var matchInfoBtnText: UILabel!
     
-    
     @IBOutlet weak var scoreCardBtnIcon: UIButton!
     @IBOutlet weak var scoreCardBtnText: UILabel!
     
@@ -41,6 +40,9 @@ class MatchDetailsViewController: UIViewController {
     
     @IBOutlet weak var matchSquadBtnIcon: UIButton!
     @IBOutlet weak var matchSquadBtnText: UILabel!
+    
+    @IBOutlet weak var liveSegmentBtn: UIStackView!
+    @IBOutlet weak var liveSegmentBtnText: UILabel!
     
     static var matchDetailsViewModel = MatchDetailsViewModel()
     var selectedMatchId: Int?
@@ -55,6 +57,8 @@ class MatchDetailsViewController: UIViewController {
         
         MatchDetailsViewController.matchDetailsViewModel.fetchMatchDetails(matchId: selectedMatchId ?? 123)
         setupBinder()
+        
+        //liveSegmentBtn.isHidden = true
         
     }
     

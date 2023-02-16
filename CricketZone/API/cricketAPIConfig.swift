@@ -25,7 +25,20 @@ final class cricketAPIConfig {
             URLQueryItem(name: "filter[status]", value: "NS"),
             URLQueryItem(name: "sort", value: "starting_at"),
             URLQueryItem(name: "fields[teams]", value: "code,image_path"),
-            URLQueryItem(name: "fields[fixtures]", value: "id,type,starting_at,localteam_id,visitorteam_id"),
+            URLQueryItem(name: "api_token", value: apiKey)
+        ]
+        guard let url = components?.url else { return nil }
+        return url
+    }
+    
+    static var apiGetLiveMatchURL: URL? {
+        guard let apiURL = URL(string: apiBaseURL) else {
+            return nil
+        }
+        var components = URLComponents(url: apiURL, resolvingAgainstBaseURL: false)
+        components?.path += "/livescores"
+        components?.queryItems = [
+            URLQueryItem(name: "include", value: "runs,localteam,visitorteam"),
             URLQueryItem(name: "api_token", value: apiKey)
         ]
         guard let url = components?.url else { return nil }
@@ -43,7 +56,6 @@ final class cricketAPIConfig {
             URLQueryItem(name: "include", value: "runs,localteam,visitorteam"),
             URLQueryItem(name: "filter[status]", value: "Finished"),
             URLQueryItem(name: "fields[teams]", value: "code,image_path"),
-            URLQueryItem(name: "fields[fixtures]", value: "id,type,note,starting_at,localteam_id,visitorteam_id"),
             URLQueryItem(name: "sort", value: "-starting_at"),
             URLQueryItem(name: "api_token", value: apiKey)
         ]

@@ -20,6 +20,9 @@ class HomeViewModel {
         guard let url = cricketAPIConfig.apiGetUpcomingMatchURL else {
             return
         }
+//        guard let url = cricketAPIConfig.apiGetLiveMatchURL else {
+//            return
+//        }
         print(url)
         
         APIService.fetchData(from: url) { (result: Result<MatchList, Error>) in

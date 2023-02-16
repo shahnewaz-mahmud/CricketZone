@@ -174,11 +174,16 @@ extension MatchInfoViewController: UITableViewDataSource {
             {
                 let sectionHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: Constants.teamFormHeaderId) as! TeamFormTVHeaderFooterView
                 
+                var matchCount = MatchDetailsViewController.matchDetailsViewModel.matchDetails?.localteam?.results?.count ?? 0
                 
-       
+                if matchCount > 5 {
+                    matchCount = 5
+                }
+
+                guard matchCount != 0 else {return sectionHeader}
                 
                 var winrecords: [Bool] = Array(repeating: false, count: 5)
-                for i in 0...4 {
+                for i in 0...matchCount - 1 {
                     if String(MatchDetailsViewController.matchDetailsViewModel.matchDetails?.localteam?.results?[i].winner_team_id ?? 0) == String(MatchDetailsViewController.matchDetailsViewModel.matchDetails?.localteam?.id ?? 0) {
                         winrecords[i] = true
                     } else {
@@ -206,8 +211,16 @@ extension MatchInfoViewController: UITableViewDataSource {
             {
                 let team2FormSectionHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: Constants.teamFormHeaderId) as! TeamFormTVHeaderFooterView
                 
+                var matchCount = MatchDetailsViewController.matchDetailsViewModel.matchDetails?.visitorteam?.results?.count ?? 0
+
+                guard matchCount != 0 else {return team2FormSectionHeader}
+                
+                if matchCount > 5 {
+                    matchCount = 5
+                }
+                
                 var winrecords: [Bool] = Array(repeating: false, count: 5)
-                for i in 0...4 {
+                for i in 0...matchCount - 1 {
                     if String(MatchDetailsViewController.matchDetailsViewModel.matchDetails?.visitorteam?.results?[i].winner_team_id ?? 0) == String(MatchDetailsViewController.matchDetailsViewModel.matchDetails?.visitorteam?.id ?? 0) {
                         winrecords[i] = true
                     } else {
