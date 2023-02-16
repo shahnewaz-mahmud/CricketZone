@@ -61,7 +61,7 @@ final class cricketAPIConfig {
             components?.path += "/fixtures"
             components?.path += "/\(matchId)"
             components?.queryItems = [
-                URLQueryItem(name: "include", value: "runs,localteam,visitorteam,league, stage,season,venue,tosswon,winnerteam,manofmatch,localteam.results,visitorteam.results,batting.result, batting.batsman, bowling.bowler"),
+                URLQueryItem(name: "include", value: "runs,localteam,visitorteam,league, stage,season,venue,tosswon,winnerteam,manofmatch,localteam.results,visitorteam.results,batting.result, batting.batsman, bowling.bowler,lineup"),
                 URLQueryItem(name: "api_token", value: apiKey)
             ]
             guard let url = components?.url else { return nil }
@@ -70,7 +70,22 @@ final class cricketAPIConfig {
         return apiGetMatchDetailsURL
     }
     
+    static func getPlayerDetailsAPIUrl(playerId: Int) -> URL?{
+        var apiGetPlayerDetailsURL: URL? {
+            guard let apiURL = URL(string: apiBaseURL) else {
+                return nil
+            }
+            var components = URLComponents(url: apiURL, resolvingAgainstBaseURL: false)
+            components?.path += "/players"
+            components?.path += "/\(playerId)"
+            components?.queryItems = [
+                URLQueryItem(name: "include", value: "career,country,teams,currentteams, career.season"),
+                URLQueryItem(name: "api_token", value: apiKey)
+            ]
+            guard let url = components?.url else { return nil }
+            return url
+        }
+        return apiGetPlayerDetailsURL
+    }
    
-    
-    
 }

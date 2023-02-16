@@ -174,6 +174,9 @@ extension MatchInfoViewController: UITableViewDataSource {
             {
                 let sectionHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: Constants.teamFormHeaderId) as! TeamFormTVHeaderFooterView
                 
+                
+       
+                
                 var winrecords: [Bool] = Array(repeating: false, count: 5)
                 for i in 0...4 {
                     if String(MatchDetailsViewController.matchDetailsViewModel.matchDetails?.localteam?.results?[i].winner_team_id ?? 0) == String(MatchDetailsViewController.matchDetailsViewModel.matchDetails?.localteam?.id ?? 0) {

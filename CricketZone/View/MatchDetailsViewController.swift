@@ -60,11 +60,15 @@ class MatchDetailsViewController: UIViewController {
     
     
     @IBAction func matchInfoBtnAction(_ sender: Any) {
-        matchInfoSegment.alpha = 1
-        scoreCardSegment.alpha = 0
-        overDetailsSegment.alpha = 0
+        UIView.animate(withDuration: 0.5, delay: 0, animations: { [weak self] in
+            guard let self = self else {return}
+            self.view.layoutIfNeeded()
+            self.matchInfoSegment.alpha = 1
+            self.scoreCardSegment.alpha = 0
+            self.overDetailsSegment.alpha = 0
+        })
         matchSquadSegment.alpha = 0
-        
+
         matchInfoBtnIcon.tintColor = UIColor(named: "Secondary Dual Mode")
         matchInfoBtnText.textColor = UIColor(named: "Secondary Dual Mode")
         
@@ -78,9 +82,13 @@ class MatchDetailsViewController: UIViewController {
     
     
     @IBAction func scoreCardbtnAction(_ sender: Any) {
-        matchInfoSegment.alpha = 0
-        scoreCardSegment.alpha = 1
-        overDetailsSegment.alpha = 0
+        UIView.animate(withDuration: 0.5, delay: 0, animations: { [weak self] in
+            guard let self = self else {return}
+            self.view.layoutIfNeeded()
+            self.scoreCardSegment.alpha = 1
+            self.matchInfoSegment.alpha = 0
+            self.overDetailsSegment.alpha = 0
+        })
         matchSquadSegment.alpha = 0
         
         scoreCardBtnIcon.tintColor = UIColor(named: "Secondary Dual Mode")
@@ -92,17 +100,20 @@ class MatchDetailsViewController: UIViewController {
         overDetailsBtnText.tintColor = .systemGray2
         matchSquadBtnIcon.tintColor = .systemGray2
         matchSquadBtnText.tintColor = .systemGray2
-        
-        
-        
     }
     
     
     @IBAction func overDetailsBtnAction(_ sender: Any) {
-        matchInfoSegment.alpha = 0
-        scoreCardSegment.alpha = 0
-        overDetailsSegment.alpha = 1
+
+        UIView.animate(withDuration: 0.5, delay: 0, animations: { [weak self] in
+            guard let self = self else {return}
+            self.view.layoutIfNeeded()
+            self.overDetailsSegment.alpha = 1
+            self.matchInfoSegment.alpha = 0
+            self.scoreCardSegment.alpha = 0
+        })
         matchSquadSegment.alpha = 0
+        
         
         overDetailsBtnIncon.tintColor = UIColor(named: "Secondary Dual Mode")
         overDetailsBtnText.textColor = UIColor(named: "Secondary Dual Mode")
@@ -117,20 +128,25 @@ class MatchDetailsViewController: UIViewController {
     
     
     @IBAction func matchSquadBtnAction(_ sender: Any) {
-        matchInfoSegment.alpha = 0
-        scoreCardSegment.alpha = 0
-        overDetailsSegment.alpha = 0
-        matchSquadSegment.alpha = 1
         
-        matchSquadBtnIcon.tintColor = UIColor(named: "Secondary Dual Mode")
-        matchSquadBtnText.textColor = UIColor(named: "Secondary Dual Mode")
         
-        matchInfoBtnIcon.tintColor = .systemGray2
-        matchInfoBtnText.tintColor = .systemGray2
-        scoreCardBtnIcon.tintColor = .systemGray2
-        scoreCardBtnText.tintColor = .systemGray2
-        overDetailsBtnIncon.tintColor = .systemGray2
-        overDetailsBtnText.tintColor = .systemGray2
+        UIView.animate(withDuration: 0.5, delay: 0, animations: { [weak self] in
+            guard let self = self else {return}
+            self.view.layoutIfNeeded()
+            self.matchSquadSegment.alpha = 1
+            self.matchInfoSegment.alpha = 0
+            self.scoreCardSegment.alpha = 0
+            self.overDetailsSegment.alpha = 0
+        })
+        self.matchSquadBtnIcon.tintColor = UIColor(named: "Secondary Dual Mode")
+        self.matchSquadBtnText.textColor = UIColor(named: "Secondary Dual Mode")
+        
+        self.matchInfoBtnIcon.tintColor = .systemGray2
+        self.matchInfoBtnText.tintColor = .systemGray2
+        self.scoreCardBtnIcon.tintColor = .systemGray2
+        self.scoreCardBtnText.tintColor = .systemGray2
+        self.overDetailsBtnIncon.tintColor = .systemGray2
+        self.overDetailsBtnText.tintColor = .systemGray2
     }
     
     

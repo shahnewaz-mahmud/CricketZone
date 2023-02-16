@@ -38,6 +38,7 @@ struct MatchData: Codable {
     let stage: League?
     let batting: [Batting]
     let bowling: [Bowling]
+    let lineup: [LineupInfo]?
 }
 
 // MARK: - League
@@ -135,5 +136,26 @@ struct Bowling: Codable {
     let noball: Int?
     let rate: Double?
     let bowler: Batsman?
+}
+
+
+
+// MARK: - LineupElement
+struct LineupInfo: Codable {
+    let id, country_id: Int?
+    let firstname, lastname, fullname: String?
+    let image_path: String?
+    let dateofbirth: String?
+    let gender: String?
+    let battingstyle: String?
+    let bowlingstyle: String?
+    let position: Position?
+    let lineup: TeamPostion?
+}
+
+// MARK: - LineupLineup
+struct TeamPostion: Codable {
+    let team_id: Int?
+    let captain, wicketkeeper, substitution: Bool?
 }
 

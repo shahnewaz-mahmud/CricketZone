@@ -12,7 +12,7 @@ struct MatchList: Codable {
     let data: [Match]?
 }
 
-// MARK: - Datum
+// MARK: - Match
 struct Match: Codable {
     let id: Int?
     let starting_at: String?
