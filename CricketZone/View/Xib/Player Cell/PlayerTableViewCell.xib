@@ -69,7 +69,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" name="Main Color"/>
+                <color key="backgroundColor" name="Main Background"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="ecm-5G-TEC" secondAttribute="trailing" constant="20" id="1BE-lF-TX5"/>
                     <constraint firstItem="ecm-5G-TEC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="FIL-Xg-32V"/>
@@ -91,6 +91,9 @@
     <resources>
         <image name="c.circle.fill" catalog="system" width="128" height="123"/>
         <image name="player" width="720" height="800"/>
+        <namedColor name="Main Background">
+            <color red="0.96100002527236938" green="0.97299998998641968" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Main Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

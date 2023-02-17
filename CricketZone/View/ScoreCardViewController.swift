@@ -102,7 +102,7 @@ extension ScoreCardViewController: UITableViewDataSource {
             let batsmanCell = tableView.dequeueReusableCell(withIdentifier: Constants.scoreCardTableViewCellId, for: indexPath) as? ScoreCardTableViewCell
             guard let batsmanCell = batsmanCell else {return UITableViewCell()}
             
-            batsmanCell.playerName.text = scoreCardViewModel.teamBattingDetails?[indexPath.row].batsman?.fullname
+            batsmanCell.playerName.text = scoreCardViewModel.teamBattingDetails?[indexPath.row].batsman?.firstname
             batsmanCell.outInfo.text = scoreCardViewModel.teamBattingDetails?[indexPath.row].result?.name
             
             batsmanCell.score1.text = String(scoreCardViewModel.teamBattingDetails?[indexPath.row].score ?? 0)
@@ -118,7 +118,7 @@ extension ScoreCardViewController: UITableViewDataSource {
             let bowlerCell = tableView.dequeueReusableCell(withIdentifier: Constants.scoreCardTableViewCellId, for: indexPath) as? ScoreCardTableViewCell
             guard let bowlerCell = bowlerCell else {return UITableViewCell()}
             
-            bowlerCell.playerName.text = scoreCardViewModel.teamBowlingDetails?[indexPath.row].bowler?.fullname
+            bowlerCell.playerName.text = scoreCardViewModel.teamBowlingDetails?[indexPath.row].bowler?.firstname
             bowlerCell.outInfo.text = ""
             bowlerCell.score1.text = String(scoreCardViewModel.teamBowlingDetails?[indexPath.row].overs ?? 0)
             bowlerCell.score2.text = String(scoreCardViewModel.teamBowlingDetails?[indexPath.row].medians ?? 0)

@@ -39,7 +39,7 @@
                                                     <constraint firstAttribute="height" constant="45" id="g9T-9p-toH"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFS-vC-2UY">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFS-vC-2UY">
                                                 <rect key="frame" x="7.5" y="49" width="45" height="13.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="13.5" id="TMn-kO-5xc"/>
@@ -80,7 +80,7 @@
                                                     <constraint firstAttribute="height" constant="45" id="PZq-a2-Ec0"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hp5-WR-8MO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hp5-WR-8MO">
                                                 <rect key="frame" x="7.5" y="49" width="45.5" height="14"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                                 <nil key="textColor"/>
@@ -121,8 +121,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="League" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEc-hS-kcM">
-                                        <rect key="frame" x="70" y="125.5" width="183" height="13"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="9"/>
+                                        <rect key="frame" x="71" y="125.5" width="181" height="13"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                                         <color key="textColor" red="0.032482963060000002" green="0.1527881026" blue="0.32712212200000002" alpha="0.67440543269479514" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -135,7 +135,7 @@
                                 </subviews>
                                 <color key="backgroundColor" name="Main Color"/>
                                 <constraints>
-                                    <constraint firstItem="WEc-hS-kcM" firstAttribute="leading" secondItem="703-fw-ahH" secondAttribute="leading" constant="70" id="3sc-57-bXP"/>
+                                    <constraint firstItem="WEc-hS-kcM" firstAttribute="leading" secondItem="703-fw-ahH" secondAttribute="leading" constant="71" id="3sc-57-bXP"/>
                                     <constraint firstItem="t9R-tw-MYZ" firstAttribute="height" secondItem="703-fw-ahH" secondAttribute="height" multiplier="0.229167" id="77o-b9-eM4"/>
                                     <constraint firstItem="Bbg-4L-bWe" firstAttribute="centerY" secondItem="703-fw-ahH" secondAttribute="centerY" id="8hH-tC-jlr"/>
                                     <constraint firstItem="bkS-BC-eAx" firstAttribute="top" secondItem="9pR-rQ-2dU" secondAttribute="bottom" id="Bpf-AM-RRI"/>
@@ -199,7 +199,7 @@
         <image name="circle.fill" catalog="system" width="128" height="123"/>
         <image name="f1" width="612" height="357"/>
         <namedColor name="Main Background">
-            <color red="0.96078431372549022" green="0.97254901960784312" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96100002527236938" green="0.97299998998641968" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Main Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

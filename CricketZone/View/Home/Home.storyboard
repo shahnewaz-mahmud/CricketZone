@@ -128,7 +128,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="265"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="iqD-0z-pjW">
-                                                <rect key="frame" x="45" y="88.333333333333314" width="60" height="98"/>
+                                                <rect key="frame" x="45" y="98.333333333333314" width="60" height="98"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="teamLogo" translatesAutoresizingMaskIntoConstraints="NO" id="6Ni-7l-erE">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -160,7 +160,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="7D4-Gn-fbk">
-                                                <rect key="frame" x="284" y="88.333333333333343" width="60" height="99.333333333333343"/>
+                                                <rect key="frame" x="284" y="98.333333333333343" width="60" height="99.333333333333343"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="teamLogo" translatesAutoresizingMaskIntoConstraints="NO" id="BQY-fy-D6f">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -192,7 +192,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="League Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZT-nn-84B">
-                                                <rect key="frame" x="140.66666666666666" y="40" width="108.66666666666666" height="20.333333333333329"/>
+                                                <rect key="frame" x="140.66666666666666" y="50" width="108.66666666666666" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <color key="textColor" name="Solid White"/>
                                                 <nil key="highlightedColor"/>
@@ -204,7 +204,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISg-EP-5VC">
-                                                <rect key="frame" x="182.66666666666666" y="63.333333333333336" width="24.666666666666657" height="13.333333333333336"/>
+                                                <rect key="frame" x="182.66666666666666" y="73.333333333333329" width="24.666666666666657" height="13.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <color key="textColor" name="Solid White"/>
                                                 <nil key="highlightedColor"/>
@@ -215,7 +215,7 @@
                                             <constraint firstItem="yZF-Qt-LDB" firstAttribute="centerX" secondItem="cD2-GH-AfQ" secondAttribute="centerX" id="0sy-Ec-ZL2"/>
                                             <constraint firstAttribute="trailing" secondItem="7D4-Gn-fbk" secondAttribute="trailing" constant="46" id="4au-ow-GbF"/>
                                             <constraint firstItem="yZF-Qt-LDB" firstAttribute="centerY" secondItem="cD2-GH-AfQ" secondAttribute="centerY" id="BUL-La-HAv"/>
-                                            <constraint firstItem="tZT-nn-84B" firstAttribute="top" secondItem="cD2-GH-AfQ" secondAttribute="top" constant="40" id="Cfb-ur-p6y"/>
+                                            <constraint firstItem="tZT-nn-84B" firstAttribute="top" secondItem="cD2-GH-AfQ" secondAttribute="top" constant="50" id="Cfb-ur-p6y"/>
                                             <constraint firstItem="iqD-0z-pjW" firstAttribute="leading" secondItem="cD2-GH-AfQ" secondAttribute="leading" constant="45" id="QOj-Ou-0j8"/>
                                             <constraint firstItem="6Ni-7l-erE" firstAttribute="height" secondItem="cD2-GH-AfQ" secondAttribute="height" multiplier="0.226415" id="TKg-aQ-5sY"/>
                                             <constraint firstItem="BQY-fy-D6f" firstAttribute="height" secondItem="cD2-GH-AfQ" secondAttribute="height" multiplier="0.226415" id="TxN-5f-Vvz"/>
@@ -320,7 +320,7 @@
                                                         <rect key="frame" x="2.3333333333333428" y="0.0" width="28" height="27.333333333333332"/>
                                                         <color key="tintColor" systemColor="systemGray2Color"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" image="6.circle.fill" catalog="system">
+                                                        <state key="normal" image="cricket.ball.circle.fill" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                                         </state>
                                                         <connections>
@@ -385,7 +385,7 @@
                                         </connections>
                                     </containerView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="Main Background"/>
                                 <constraints>
                                     <constraint firstItem="EOV-tW-sHZ" firstAttribute="leading" secondItem="08k-RG-3KQ" secondAttribute="leading" id="1Da-DP-tYA"/>
                                     <constraint firstItem="GFI-8C-hRr" firstAttribute="top" secondItem="08k-RG-3KQ" secondAttribute="top" constant="20" id="2dJ-lx-KqL"/>
@@ -487,10 +487,11 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9NZ-2T-Q0b">
                                 <rect key="frame" x="0.0" y="10" width="390" height="450.66666666666669"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5vo-wN-1S0"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Main Background"/>
                         <constraints>
                             <constraint firstItem="9NZ-2T-Q0b" firstAttribute="top" secondItem="rYc-5J-Btx" secondAttribute="top" constant="10" id="TWb-LE-Ion"/>
                             <constraint firstItem="9NZ-2T-Q0b" firstAttribute="leading" secondItem="5vo-wN-1S0" secondAttribute="leading" id="cpd-iD-3Wa"/>
@@ -639,7 +640,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UzK-CV-0kN">
                                 <rect key="frame" x="0.0" y="60.000000000000028" width="390" height="410.66666666666674"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uJ9-BE-f9n">
                                 <rect key="frame" x="129.66666666666666" y="20" width="130.99999999999997" height="31"/>
@@ -657,7 +658,7 @@
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Fs-a1-HV9"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Main Background"/>
                         <constraints>
                             <constraint firstItem="2Fs-a1-HV9" firstAttribute="trailing" secondItem="UzK-CV-0kN" secondAttribute="trailing" id="56c-rz-9OQ"/>
                             <constraint firstItem="UzK-CV-0kN" firstAttribute="leading" secondItem="2Fs-a1-HV9" secondAttribute="leading" id="LKC-pO-6r1"/>
@@ -678,9 +679,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="6.circle.fill" catalog="system" width="128" height="123"/>
         <image name="antenna.radiowaves.left.and.right.circle.fill" catalog="system" width="128" height="123"/>
         <image name="bell" catalog="system" width="125" height="128"/>
+        <image name="cricket.ball.circle.fill" catalog="system" width="128" height="123"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="info.circle.fill" catalog="system" width="128" height="123"/>
         <image name="list.bullet.circle.fill" catalog="system" width="128" height="123"/>
@@ -689,7 +690,7 @@
         <image name="stadium" width="814" height="454"/>
         <image name="teamLogo" width="888" height="878"/>
         <namedColor name="Main Background">
-            <color red="0.96078431372549022" green="0.97254901960784312" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96100002527236938" green="0.97299998998641968" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Secondary Color">
             <color red="0.030999999493360519" green="0.093999996781349182" blue="0.22400000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

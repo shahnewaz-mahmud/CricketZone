@@ -19,6 +19,8 @@ class Constants {
     static let playerDetailsVCID = "playerDetailsVC"
     static let playerInfoTableViewCellId = "PlayerInfoTableViewCell"
     static let playerTeamTableViewCellId = "PlayerTeamTableViewCell"
+    static let playerTeamUITableViewHeaderViewId = "PlayerTeamUITableViewHeaderView"
+    static let playerCareerTableViewCellId = "PlayerCareerTableViewCell"
 }
 
 

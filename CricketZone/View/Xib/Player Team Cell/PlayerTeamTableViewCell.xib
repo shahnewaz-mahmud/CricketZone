@@ -52,22 +52,24 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kWj-F8-arl">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nationalTeam" translatesAutoresizingMaskIntoConstraints="NO" id="kWj-F8-arl">
                                 <rect key="frame" x="308" y="10" width="66" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="Ffy-W5-lQl"/>
+                                    <constraint firstAttribute="height" constant="24" id="Gok-tE-APr"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="kWj-F8-arl" firstAttribute="width" secondItem="8Gy-8e-SYp" secondAttribute="width" multiplier="0.17217" id="00I-6H-aEk"/>
                             <constraint firstItem="F75-p4-l3I" firstAttribute="top" secondItem="8Gy-8e-SYp" secondAttribute="top" constant="20" id="0bU-0K-tAu"/>
                             <constraint firstItem="D4N-Kr-1pe" firstAttribute="top" secondItem="8Gy-8e-SYp" secondAttribute="top" constant="24.000000000000004" id="DSL-jk-Ygd"/>
-                            <constraint firstAttribute="trailing" secondItem="kWj-F8-arl" secondAttribute="trailing" constant="10" id="QJ4-A0-Of0"/>
+                            <constraint firstAttribute="trailing" secondItem="kWj-F8-arl" secondAttribute="trailing" constant="10" id="Sw1-Jj-IBX"/>
                             <constraint firstItem="D4N-Kr-1pe" firstAttribute="centerY" secondItem="8Gy-8e-SYp" secondAttribute="centerY" id="XbA-gv-CxW"/>
                             <constraint firstItem="F75-p4-l3I" firstAttribute="centerY" secondItem="8Gy-8e-SYp" secondAttribute="centerY" id="d45-Un-SnJ"/>
                             <constraint firstItem="F75-p4-l3I" firstAttribute="leading" secondItem="8Gy-8e-SYp" secondAttribute="leading" constant="15" id="gqQ-mk-eEh"/>
-                            <constraint firstItem="kWj-F8-arl" firstAttribute="height" secondItem="8Gy-8e-SYp" secondAttribute="height" multiplier="0.241379" id="rRE-Pf-Iyb"/>
                             <constraint firstItem="D4N-Kr-1pe" firstAttribute="leading" secondItem="F75-p4-l3I" secondAttribute="trailing" constant="25" id="u6f-L1-fle"/>
-                            <constraint firstItem="kWj-F8-arl" firstAttribute="top" secondItem="8Gy-8e-SYp" secondAttribute="top" constant="10" id="xAy-C3-5Zl"/>
+                            <constraint firstItem="kWj-F8-arl" firstAttribute="top" secondItem="8Gy-8e-SYp" secondAttribute="top" constant="10" id="vv7-at-dJR"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -92,8 +94,9 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="nationalTeam" width="847" height="304"/>
         <namedColor name="Main Background">
-            <color red="0.96078431372549022" green="0.97254901960784312" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96100002527236938" green="0.97299998998641968" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
