@@ -32,6 +32,17 @@ import UIKit
          
          return (time, readableDate)
      }
+     
+     func calculateAge(birthdateString: String) -> String? {
+         let dateFormatter = DateFormatter()
+         dateFormatter.dateFormat = "yyyy-MM-dd"
+         if let birthdate = dateFormatter.date(from: birthdateString) {
+             let now = Date()
+             let ageComponents = Calendar.current.dateComponents([.year], from: birthdate, to: now)
+             return String(ageComponents.year ?? 0)
+         }
+         return nil
+     }
 
 }
 
@@ -72,7 +83,7 @@ extension UIView {
         layer.shadowColor = UIColor.gray.cgColor
         layer.shadowOpacity = 0.20
         layer.shadowOffset = CGSize.zero
-        layer.shadowRadius = 10
+        layer.shadowRadius = 5
         layer.shouldRasterize = true
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
 
