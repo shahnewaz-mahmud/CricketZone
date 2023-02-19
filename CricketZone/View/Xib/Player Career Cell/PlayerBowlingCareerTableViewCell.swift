@@ -1,14 +1,14 @@
 //
-//  PlayerCareerTableViewCell.swift
+//  PlayerBowlingCareerTableViewCell.swift
 //  CricketZone
 //
-//  Created by Admin on 17/2/23.
+//  Created by Shahnewaz on 18/2/23.
 //
 
 import UIKit
 
-class PlayerCareerTableViewCell: UITableViewCell {
-    
+class PlayerBowlingCareerTableViewCell: UITableViewCell {
+
     @IBOutlet weak var cellBackground: UIView!
     
     @IBOutlet weak var seasonInfo: UILabel!
@@ -21,9 +21,11 @@ class PlayerCareerTableViewCell: UITableViewCell {
 
     }
 
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+        // Configure the view for the selected state
     }
     
 }

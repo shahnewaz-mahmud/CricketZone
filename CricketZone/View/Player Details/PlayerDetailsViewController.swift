@@ -46,6 +46,8 @@ class PlayerDetailsViewController: UIViewController {
         
     }
     
+    
+    
     func setupBinder() {
         PlayerDetailsViewModel.shared.$playerDetails.sink { [weak self] playerDetails in
             

@@ -27,7 +27,7 @@ class MatchDetailsViewController: UIViewController {
     @IBOutlet weak var scoreCardSegment: UIView!
     @IBOutlet weak var overDetailsSegment: UIView!
     @IBOutlet weak var matchSquadSegment: UIView!
-    
+    @IBOutlet weak var liveScoreSegment: UIView!
     
     @IBOutlet weak var matchInfoBtnIcon: UIButton!
     @IBOutlet weak var matchInfoBtnText: UILabel!
@@ -41,11 +41,13 @@ class MatchDetailsViewController: UIViewController {
     @IBOutlet weak var matchSquadBtnIcon: UIButton!
     @IBOutlet weak var matchSquadBtnText: UILabel!
     
-    @IBOutlet weak var liveSegmentBtn: UIStackView!
+ 
+    @IBOutlet weak var liveSegmentBtn: UIButton!
     @IBOutlet weak var liveSegmentBtnText: UILabel!
     
     static var matchDetailsViewModel = MatchDetailsViewModel()
     var selectedMatchId: Int?
+    var isLive: Bool?
     
     private var cancellables: Set<AnyCancellable> = []
     
@@ -55,11 +57,15 @@ class MatchDetailsViewController: UIViewController {
         team2Flag.layer.cornerRadius = team2Flag.frame.height/2
         contentView.layer.cornerRadius = 35
         
-        MatchDetailsViewController.matchDetailsViewModel.fetchMatchDetails(matchId: selectedMatchId ?? 123)
+        MatchDetailsViewController.matchDetailsViewModel.fetchMatchDetails(matchId: selectedMatchId ?? 123, isLive: isLive ?? false)
         setupBinder()
         
         //liveSegmentBtn.isHidden = true
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        MatchDetailsViewController.matchDetailsViewModel.autoRefreshTimer?.invalidate()
     }
     
     
@@ -68,6 +74,7 @@ class MatchDetailsViewController: UIViewController {
             guard let self = self else {return}
             self.view.layoutIfNeeded()
             self.matchInfoSegment.alpha = 1
+            self.liveScoreSegment.alpha = 0
             self.scoreCardSegment.alpha = 0
             self.overDetailsSegment.alpha = 0
         })
@@ -76,13 +83,42 @@ class MatchDetailsViewController: UIViewController {
         matchInfoBtnIcon.tintColor = UIColor(named: "Secondary Dual Mode")
         matchInfoBtnText.textColor = UIColor(named: "Secondary Dual Mode")
         
+        liveSegmentBtn.tintColor = .systemGray2
+        liveSegmentBtnText.textColor = .systemGray2
         scoreCardBtnIcon.tintColor = .systemGray2
-        scoreCardBtnText.tintColor = .systemGray2
+        scoreCardBtnText.textColor = .systemGray2
         overDetailsBtnIncon.tintColor = .systemGray2
-        overDetailsBtnText.tintColor = .systemGray2
+        overDetailsBtnText.textColor = .systemGray2
         matchSquadBtnIcon.tintColor = .systemGray2
-        matchSquadBtnText.tintColor = .systemGray2
+        matchSquadBtnText.textColor = .systemGray2
     }
+    
+    
+    @IBAction func liveScoreBtnAction(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, delay: 0, animations: { [weak self] in
+            guard let self = self else {return}
+            self.view.layoutIfNeeded()
+            self.liveScoreSegment.alpha = 1
+            self.matchInfoSegment.alpha = 0
+            self.scoreCardSegment.alpha = 0
+            self.overDetailsSegment.alpha = 0
+        })
+        matchSquadSegment.alpha = 0
+
+        liveSegmentBtn.tintColor = UIColor(named: "Secondary Dual Mode")
+        liveSegmentBtnText.textColor = UIColor(named: "Secondary Dual Mode")
+        
+        matchInfoBtnIcon.tintColor = .systemGray2
+        matchInfoBtnText.textColor = .systemGray2
+        scoreCardBtnIcon.tintColor = .systemGray2
+        scoreCardBtnText.textColor = .systemGray2
+        overDetailsBtnIncon.tintColor = .systemGray2
+        overDetailsBtnText.textColor = .systemGray2
+        matchSquadBtnIcon.tintColor = .systemGray2
+        matchSquadBtnText.textColor = .systemGray2
+    }
+
+    
     
     
     @IBAction func scoreCardbtnAction(_ sender: Any) {
@@ -90,6 +126,7 @@ class MatchDetailsViewController: UIViewController {
             guard let self = self else {return}
             self.view.layoutIfNeeded()
             self.scoreCardSegment.alpha = 1
+            self.liveScoreSegment.alpha = 0
             self.matchInfoSegment.alpha = 0
             self.overDetailsSegment.alpha = 0
         })
@@ -98,12 +135,14 @@ class MatchDetailsViewController: UIViewController {
         scoreCardBtnIcon.tintColor = UIColor(named: "Secondary Dual Mode")
         scoreCardBtnText.textColor = UIColor(named: "Secondary Dual Mode")
         
+        liveSegmentBtn.tintColor = .systemGray2
+        liveSegmentBtnText.textColor = .systemGray2
         matchInfoBtnIcon.tintColor = .systemGray2
-        matchInfoBtnText.tintColor = .systemGray2
+        matchInfoBtnText.textColor = .systemGray2
         overDetailsBtnIncon.tintColor = .systemGray2
-        overDetailsBtnText.tintColor = .systemGray2
+        overDetailsBtnText.textColor = .systemGray2
         matchSquadBtnIcon.tintColor = .systemGray2
-        matchSquadBtnText.tintColor = .systemGray2
+        matchSquadBtnText.textColor = .systemGray2
     }
     
     
@@ -113,6 +152,7 @@ class MatchDetailsViewController: UIViewController {
             guard let self = self else {return}
             self.view.layoutIfNeeded()
             self.overDetailsSegment.alpha = 1
+            self.liveScoreSegment.alpha = 0
             self.matchInfoSegment.alpha = 0
             self.scoreCardSegment.alpha = 0
         })
@@ -122,12 +162,14 @@ class MatchDetailsViewController: UIViewController {
         overDetailsBtnIncon.tintColor = UIColor(named: "Secondary Dual Mode")
         overDetailsBtnText.textColor = UIColor(named: "Secondary Dual Mode")
         
+        liveSegmentBtn.tintColor = .systemGray2
+        liveSegmentBtnText.textColor = .systemGray2
         matchInfoBtnIcon.tintColor = .systemGray2
-        matchInfoBtnText.tintColor = .systemGray2
+        matchInfoBtnText.textColor = .systemGray2
         scoreCardBtnIcon.tintColor = .systemGray2
-        scoreCardBtnText.tintColor = .systemGray2
+        scoreCardBtnText.textColor = .systemGray2
         matchSquadBtnIcon.tintColor = .systemGray2
-        matchSquadBtnText.tintColor = .systemGray2
+        matchSquadBtnText.textColor = .systemGray2
     }
     
     
@@ -139,18 +181,21 @@ class MatchDetailsViewController: UIViewController {
             self.view.layoutIfNeeded()
             self.matchSquadSegment.alpha = 1
             self.matchInfoSegment.alpha = 0
+            self.liveScoreSegment.alpha = 0
             self.scoreCardSegment.alpha = 0
             self.overDetailsSegment.alpha = 0
         })
         self.matchSquadBtnIcon.tintColor = UIColor(named: "Secondary Dual Mode")
         self.matchSquadBtnText.textColor = UIColor(named: "Secondary Dual Mode")
         
+        liveSegmentBtn.tintColor = .systemGray2
+        liveSegmentBtnText.textColor = .systemGray2
         self.matchInfoBtnIcon.tintColor = .systemGray2
-        self.matchInfoBtnText.tintColor = .systemGray2
+        self.matchInfoBtnText.textColor = .systemGray2
         self.scoreCardBtnIcon.tintColor = .systemGray2
-        self.scoreCardBtnText.tintColor = .systemGray2
+        self.scoreCardBtnText.textColor = .systemGray2
         self.overDetailsBtnIncon.tintColor = .systemGray2
-        self.overDetailsBtnText.tintColor = .systemGray2
+        self.overDetailsBtnText.textColor = .systemGray2
     }
     
     
@@ -181,19 +226,29 @@ class MatchDetailsViewController: UIViewController {
                 )
             
             
-                if matchDetails.status == "Finished" {
-                    if(matchDetails.localteam_id == matchDetails.runs[0].team_id) {
-                        self.team1Score.text = String(matchDetails.runs[0].score ?? 0)+"/"
-                        self.team1Over.text = "("+String(matchDetails.runs[0].overs ?? 0)+")"
-                        
-                        self.team2Score.text = String(matchDetails.runs[1].score ?? 0)+"/"
-                        self.team2Over.text = "("+String(matchDetails.runs[1].overs ?? 0)+")"
+                if matchDetails.status != "NS" {
+                    if matchDetails.runs.count == 2 {
+                        if(matchDetails.localteam_id == matchDetails.runs[0].team_id) {
+                            self.team1Score.text = String(matchDetails.runs[0].score ?? 0)+"/" + String(matchDetails.runs[0].wickets ?? 0)
+                            self.team1Over.text = "("+String(matchDetails.runs[0].overs ?? 0)+")"
+                            
+                            self.team2Score.text = String(matchDetails.runs[1].score ?? 0)+"/" + String(matchDetails.runs[1].wickets ?? 0)
+                            self.team2Over.text = "("+String(matchDetails.runs[1].overs ?? 0)+")"
+                        } else {
+                            self.team1Score.text = String(matchDetails.runs[1].score ?? 0)+"/" + String(matchDetails.runs[1].wickets ?? 0)
+                            self.team1Over.text = "("+String(matchDetails.runs[1].overs ?? 0)+")"
+                            
+                            self.team2Score.text = String(matchDetails.runs[0].score ?? 0)+"/" + String(matchDetails.runs[0].wickets ?? 0)
+                            self.team2Over.text = "("+String(matchDetails.runs[0].overs ?? 0)+")"
+                        }
                     } else {
-                        self.team1Score.text = String(matchDetails.runs[1].score ?? 0)+"/"
-                        self.team1Over.text = "("+String(matchDetails.runs[1].overs ?? 0)+")"
-                        
-                        self.team2Score.text = String(matchDetails.runs[0].score ?? 0)+"/"
-                        self.team2Over.text = "("+String(matchDetails.runs[0].overs ?? 0)+")"
+                        if(matchDetails.localteam_id == matchDetails.runs[0].team_id) {
+                            self.team1Score.text = String(matchDetails.runs[0].score ?? 0)+"/" + String(matchDetails.runs[0].wickets ?? 0)
+                            self.team1Over.text = "("+String(matchDetails.runs[0].overs ?? 0)+")"
+                        } else {
+                            self.team2Score.text = String(matchDetails.runs[0].score ?? 0)+"/" + String(matchDetails.runs[0].wickets ?? 0)
+                            self.team2Over.text = "("+String(matchDetails.runs[0].overs ?? 0)+")"
+                        }
                     }
                     
                 }

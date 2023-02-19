@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aSS-ul-TXO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aSS-ul-TXO">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -47,7 +46,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="b1R-6w-eG0">
-                                <rect key="frame" x="0.0" y="90.999999999999986" width="390" height="192.66666666666663"/>
+                                <rect key="frame" x="0.0" y="87.999999999999986" width="390" height="192.66666666666663"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="m0W-js-eLa">
                                     <size key="itemSize" width="128" height="128"/>
@@ -67,13 +66,13 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Matches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTJ-2J-grs">
-                                <rect key="frame" x="15.000000000000007" y="283.66666666666669" width="115.66666666666669" height="18"/>
+                                <rect key="frame" x="15.000000000000007" y="280.66666666666669" width="115.66666666666669" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xze-DG-398">
-                                <rect key="frame" x="0.0" y="306.66666666666674" width="390" height="454.33333333333326"/>
+                                <rect key="frame" x="0.0" y="303.66666666666674" width="390" height="457.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -279,6 +278,9 @@
                                                         <state key="normal" image="antenna.radiowaves.left.and.right.circle.fill" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="liveScoreBtnAction:" destination="Udg-hG-gdN" eventType="touchUpInside" id="bZP-2o-7wJ"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5B-aY-gne">
                                                         <rect key="frame" x="7.3333333333333304" y="33.333333333333371" width="19.666666666666671" height="12"/>
@@ -320,7 +322,7 @@
                                                         <rect key="frame" x="2.3333333333333428" y="0.0" width="28" height="27.333333333333332"/>
                                                         <color key="tintColor" systemColor="systemGray2Color"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" image="cricket.ball.circle.fill" catalog="system">
+                                                        <state key="normal" image="circle.inset.filled" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                                         </state>
                                                         <connections>
@@ -378,6 +380,12 @@
                                             <segue destination="MHi-mc-aSl" kind="embed" id="9DX-pz-OB1"/>
                                         </connections>
                                     </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f58-7W-8sL">
+                                        <rect key="frame" x="0.0" y="104" width="390" height="471"/>
+                                        <connections>
+                                            <segue destination="B3v-Cd-d06" kind="embed" id="mfk-CH-QfN"/>
+                                        </connections>
+                                    </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goZ-H3-WjN">
                                         <rect key="frame" x="0.0" y="104.33333333333329" width="390" height="470.66666666666674"/>
                                         <connections>
@@ -397,10 +405,14 @@
                                     <constraint firstAttribute="trailing" secondItem="mkw-FR-va5" secondAttribute="trailing" id="Phj-FF-KKJ"/>
                                     <constraint firstItem="goZ-H3-WjN" firstAttribute="top" secondItem="GFI-8C-hRr" secondAttribute="bottom" id="Rtq-da-Y8F"/>
                                     <constraint firstItem="GFI-8C-hRr" firstAttribute="centerX" secondItem="08k-RG-3KQ" secondAttribute="centerX" id="Sdv-p2-TBC"/>
+                                    <constraint firstAttribute="trailing" secondItem="f58-7W-8sL" secondAttribute="trailing" id="XaE-aP-Buy"/>
                                     <constraint firstAttribute="bottom" secondItem="EOV-tW-sHZ" secondAttribute="bottom" id="YKa-gQ-qS9"/>
+                                    <constraint firstAttribute="bottom" secondItem="f58-7W-8sL" secondAttribute="bottom" id="Yp1-L2-T9i"/>
                                     <constraint firstAttribute="trailing" secondItem="EOV-tW-sHZ" secondAttribute="trailing" id="ax2-YC-8Tb"/>
                                     <constraint firstAttribute="bottom" secondItem="goZ-H3-WjN" secondAttribute="bottom" id="bEF-9b-DGL"/>
                                     <constraint firstAttribute="bottom" secondItem="TCx-2K-cWl" secondAttribute="bottom" id="bbX-Cu-iHN"/>
+                                    <constraint firstItem="f58-7W-8sL" firstAttribute="leading" secondItem="08k-RG-3KQ" secondAttribute="leading" id="cYx-Dg-XKU"/>
+                                    <constraint firstItem="f58-7W-8sL" firstAttribute="top" secondItem="GFI-8C-hRr" secondAttribute="bottom" id="ePj-Ic-VS7"/>
                                     <constraint firstItem="TCx-2K-cWl" firstAttribute="top" secondItem="GFI-8C-hRr" secondAttribute="bottom" id="fBz-A2-62b"/>
                                     <constraint firstItem="goZ-H3-WjN" firstAttribute="leading" secondItem="08k-RG-3KQ" secondAttribute="leading" id="nx2-eX-Gyq"/>
                                     <constraint firstAttribute="trailing" secondItem="TCx-2K-cWl" secondAttribute="trailing" id="obc-wY-XTJ"/>
@@ -426,7 +438,8 @@
                     <connections>
                         <outlet property="contentView" destination="08k-RG-3KQ" id="l9l-nz-H8a"/>
                         <outlet property="leagueName" destination="tZT-nn-84B" id="GRX-HI-HeL"/>
-                        <outlet property="liveSegmentBtn" destination="ZQn-1y-Jlj" id="oax-VF-tKn"/>
+                        <outlet property="liveScoreSegment" destination="f58-7W-8sL" id="NxY-kg-9od"/>
+                        <outlet property="liveSegmentBtn" destination="737-UB-Aop" id="0P3-Ig-HOQ"/>
                         <outlet property="liveSegmentBtnText" destination="G5B-aY-gne" id="veX-js-ODK"/>
                         <outlet property="matchDate" destination="ISg-EP-5VC" id="Jdl-9O-oSq"/>
                         <outlet property="matchInfoBtnIcon" destination="PJL-vb-OFC" id="JiB-MG-XGp"/>
@@ -465,7 +478,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fc5-Nc-YcE">
-                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -517,7 +530,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bmh-b8-Efw">
                                 <rect key="frame" x="0.0" y="60.000000000000028" width="390" height="410.66666666666674"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4Rc-ZG-INz">
                                 <rect key="frame" x="129.66666666666666" y="20" width="130.99999999999997" height="31"/>
@@ -534,7 +547,7 @@
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ur7-jx-rip"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Main Background"/>
                         <constraints>
                             <constraint firstItem="ur7-jx-rip" firstAttribute="bottom" secondItem="bmh-b8-Efw" secondAttribute="bottom" id="Ag0-vU-WZP"/>
                             <constraint firstItem="4Rc-ZG-INz" firstAttribute="centerX" secondItem="VYp-Ho-AmY" secondAttribute="centerX" id="G4q-G3-mvS"/>
@@ -677,16 +690,45 @@
             </objects>
             <point key="canvasLocation" x="3814" y="714"/>
         </scene>
+        <!--Live Score View Controller-->
+        <scene sceneID="oFA-cl-SZK">
+            <objects>
+                <viewController id="B3v-Cd-d06" customClass="LiveScoreViewController" customModule="CricketZone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h7C-BD-2e2">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="471"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1Am-Ma-tqA">
+                                <rect key="frame" x="0.0" y="20" width="390" height="451"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="Main Background"/>
+                        <constraints>
+                            <constraint firstItem="1Am-Ma-tqA" firstAttribute="leading" secondItem="h7C-BD-2e2" secondAttribute="leading" id="HSR-Ae-FN7"/>
+                            <constraint firstAttribute="bottom" secondItem="1Am-Ma-tqA" secondAttribute="bottom" id="Ik8-oM-gFR"/>
+                            <constraint firstItem="1Am-Ma-tqA" firstAttribute="top" secondItem="h7C-BD-2e2" secondAttribute="top" constant="20" id="Pxa-P6-kZ4"/>
+                            <constraint firstAttribute="trailing" secondItem="1Am-Ma-tqA" secondAttribute="trailing" id="ycF-Fz-7bB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="1Am-Ma-tqA" id="N6Z-Hv-eIr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nbp-ML-Phm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4482" y="713"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="antenna.radiowaves.left.and.right.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="bell" catalog="system" width="125" height="128"/>
-        <image name="cricket.ball.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="house.fill" catalog="system" width="128" height="104"/>
-        <image name="info.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="list.bullet.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="antenna.radiowaves.left.and.right.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="bell" catalog="system" width="128" height="124"/>
+        <image name="circle.inset.filled" catalog="system" width="128" height="121"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="info.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="list.bullet.circle.fill" catalog="system" width="128" height="121"/>
         <image name="logo" width="107" height="40"/>
-        <image name="person.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="stadium" width="814" height="454"/>
         <image name="teamLogo" width="888" height="878"/>
         <namedColor name="Main Background">

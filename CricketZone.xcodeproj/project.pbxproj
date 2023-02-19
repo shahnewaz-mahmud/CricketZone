@@ -10,6 +10,13 @@
 		1158FB18FBB2833E0B0FDC40 /* Pods_CricketZone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BDD9269FE801248C9C98B8A /* Pods_CricketZone.framework */; };
 		35FAC67E299802740069DEB4 /* MatchDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FAC67D299802740069DEB4 /* MatchDetailsViewController.swift */; };
 		35FAC681299802910069DEB4 /* MatchDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FAC680299802910069DEB4 /* MatchDetailsViewModel.swift */; };
+		35FC944829A0B92C0071DC0D /* PlayerCareerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC944729A0B92C0071DC0D /* PlayerCareerViewModel.swift */; };
+		35FC944F29A0DABD0071DC0D /* PlayerBowlingCareerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC944D29A0DABD0071DC0D /* PlayerBowlingCareerTableViewCell.swift */; };
+		35FC945029A0DABD0071DC0D /* PlayerBowlingCareerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35FC944E29A0DABD0071DC0D /* PlayerBowlingCareerTableViewCell.xib */; };
+		35FC945229A10A390071DC0D /* LiveScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC945129A10A390071DC0D /* LiveScoreViewController.swift */; };
+		35FC945429A10EAD0071DC0D /* LiveScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC945329A10EAD0071DC0D /* LiveScoreViewModel.swift */; };
+		35FC945729A12A1D0071DC0D /* WinProbabilityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC945529A12A1D0071DC0D /* WinProbabilityTableViewCell.swift */; };
+		35FC945829A12A1D0071DC0D /* WinProbabilityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35FC945629A12A1D0071DC0D /* WinProbabilityTableViewCell.xib */; };
 		848812F0299F52DF004DDBA8 /* PlayerTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848812EF299F52DF004DDBA8 /* PlayerTeamsViewController.swift */; };
 		848812F4299F5F35004DDBA8 /* PlayerTeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848812F2299F5F35004DDBA8 /* PlayerTeamTableViewCell.swift */; };
 		848812F5299F5F35004DDBA8 /* PlayerTeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848812F3299F5F35004DDBA8 /* PlayerTeamTableViewCell.xib */; };
@@ -69,6 +76,13 @@
 		1FAE0122A389898F2860FB95 /* Pods-CricketZone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CricketZone.release.xcconfig"; path = "Target Support Files/Pods-CricketZone/Pods-CricketZone.release.xcconfig"; sourceTree = "<group>"; };
 		35FAC67D299802740069DEB4 /* MatchDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailsViewController.swift; sourceTree = "<group>"; };
 		35FAC680299802910069DEB4 /* MatchDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailsViewModel.swift; sourceTree = "<group>"; };
+		35FC944729A0B92C0071DC0D /* PlayerCareerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCareerViewModel.swift; sourceTree = "<group>"; };
+		35FC944D29A0DABD0071DC0D /* PlayerBowlingCareerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerBowlingCareerTableViewCell.swift; sourceTree = "<group>"; };
+		35FC944E29A0DABD0071DC0D /* PlayerBowlingCareerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerBowlingCareerTableViewCell.xib; sourceTree = "<group>"; };
+		35FC945129A10A390071DC0D /* LiveScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreViewController.swift; sourceTree = "<group>"; };
+		35FC945329A10EAD0071DC0D /* LiveScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveScoreViewModel.swift; sourceTree = "<group>"; };
+		35FC945529A12A1D0071DC0D /* WinProbabilityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinProbabilityTableViewCell.swift; sourceTree = "<group>"; };
+		35FC945629A12A1D0071DC0D /* WinProbabilityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WinProbabilityTableViewCell.xib; sourceTree = "<group>"; };
 		3BDD9269FE801248C9C98B8A /* Pods_CricketZone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CricketZone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		848812EF299F52DF004DDBA8 /* PlayerTeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTeamsViewController.swift; sourceTree = "<group>"; };
 		848812F2299F5F35004DDBA8 /* PlayerTeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTeamTableViewCell.swift; sourceTree = "<group>"; };
@@ -219,6 +233,15 @@
 			path = "Score Card Cell";
 			sourceTree = "<group>";
 		};
+		35FC945929A12A490071DC0D /* Win Probability Cell */ = {
+			isa = PBXGroup;
+			children = (
+				35FC945529A12A1D0071DC0D /* WinProbabilityTableViewCell.swift */,
+				35FC945629A12A1D0071DC0D /* WinProbabilityTableViewCell.xib */,
+			);
+			path = "Win Probability Cell";
+			sourceTree = "<group>";
+		};
 		848812F1299F5F04004DDBA8 /* Player Team Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +275,8 @@
 			children = (
 				84E06165299F98E700834048 /* PlayerCareerTableViewCell.swift */,
 				84E06166299F98E700834048 /* PlayerCareerTableViewCell.xib */,
+				35FC944D29A0DABD0071DC0D /* PlayerBowlingCareerTableViewCell.swift */,
+				35FC944E29A0DABD0071DC0D /* PlayerBowlingCareerTableViewCell.xib */,
 			);
 			path = "Player Career Cell";
 			sourceTree = "<group>";
@@ -277,6 +302,7 @@
 		892E20B1299C862900DECB9B /* Xib */ = {
 			isa = PBXGroup;
 			children = (
+				35FC945929A12A490071DC0D /* Win Probability Cell */,
 				89D37C40299A35740059C1D0 /* Match Info Cell */,
 				350014792995576B001D814C /* Recent Match Cell */,
 				3500147A299557A2001D814C /* Live Match Cell */,
@@ -301,6 +327,8 @@
 				892E20B3299CA21900DECB9B /* ScoreCardViewModel.swift */,
 				84EEB724299DE1480058242B /* SquadViewModel.swift */,
 				849EAEE1299E192600A39B6D /* PlayerDetailsViewModel.swift */,
+				35FC944729A0B92C0071DC0D /* PlayerCareerViewModel.swift */,
+				35FC945329A10EAD0071DC0D /* LiveScoreViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -392,6 +420,7 @@
 				84E06162299F8CF200834048 /* PlayerCareerViewController.swift */,
 				899C8F4C29948FE00001AC43 /* Main.storyboard */,
 				899C8F5429948FE40001AC43 /* LaunchScreen.storyboard */,
+				35FC945129A10A390071DC0D /* LiveScoreViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -463,7 +492,9 @@
 				849EAEE0299DF7F900A39B6D /* PlayerDetails.storyboard in Resources */,
 				899C8F5629948FE40001AC43 /* LaunchScreen.storyboard in Resources */,
 				84E06161299F74A000834048 /* PlayerTeamUITableViewHeaderView.xib in Resources */,
+				35FC945029A0DABD0071DC0D /* PlayerBowlingCareerTableViewCell.xib in Resources */,
 				899C8F712994CCE00001AC43 /* LiveMatchCVCell.xib in Resources */,
+				35FC945829A12A1D0071DC0D /* WinProbabilityTableViewCell.xib in Resources */,
 				899C8F4E29948FE00001AC43 /* Main.storyboard in Resources */,
 				89E1DB81299522DB008452C3 /* RecentMatchTVCell.xib in Resources */,
 				848812F5299F5F35004DDBA8 /* PlayerTeamTableViewCell.xib in Resources */,
@@ -540,6 +571,7 @@
 				84EEB72A299DF6970058242B /* PlayerDetailsViewController.swift in Sources */,
 				849EAEE2299E192600A39B6D /* PlayerDetailsViewModel.swift in Sources */,
 				848812F4299F5F35004DDBA8 /* PlayerTeamTableViewCell.swift in Sources */,
+				35FC944829A0B92C0071DC0D /* PlayerCareerViewModel.swift in Sources */,
 				84E06163299F8CF200834048 /* PlayerCareerViewController.swift in Sources */,
 				89D37C3F299A356C0059C1D0 /* MatchInfoViewController.swift in Sources */,
 				899C8F702994CCE00001AC43 /* LiveMatchCVCell.swift in Sources */,
@@ -551,12 +583,16 @@
 				89D37C43299A37130059C1D0 /* InfoTableViewCell.swift in Sources */,
 				84D8D009299F2CB600AA4925 /* PlayerInfoTableViewCell.swift in Sources */,
 				899C8F682994BD9F0001AC43 /* FixtureViewController.swift in Sources */,
+				35FC945229A10A390071DC0D /* LiveScoreViewController.swift in Sources */,
 				89E1DB752994E2E4008452C3 /* Constants.swift in Sources */,
 				899C8F602994A1000001AC43 /* HomeViewModel.swift in Sources */,
 				84B1E17D299F2B29009571A8 /* PlayerOverviewViewController.swift in Sources */,
 				895CE68A2995EA8000150362 /* APIService.swift in Sources */,
 				84E0615F299F747200834048 /* PlayerTeamUITableViewHeaderView.swift in Sources */,
+				35FC944F29A0DABD0071DC0D /* PlayerBowlingCareerTableViewCell.swift in Sources */,
+				35FC945429A10EAD0071DC0D /* LiveScoreViewModel.swift in Sources */,
 				84EEB725299DE1480058242B /* SquadViewModel.swift in Sources */,
+				35FC945729A12A1D0071DC0D /* WinProbabilityTableViewCell.swift in Sources */,
 				849EAEE4299E20B100A39B6D /* PlayerDetailsModel.swift in Sources */,
 				899C341F2999DC6200E18031 /* MatchDetailsModel.swift in Sources */,
 				899C8F5E2994A0E80001AC43 /* HomeViewController.swift in Sources */,

@@ -100,30 +100,24 @@ class LiveMatchCVCell: UICollectionViewCell {
             
             if matchInfo.runs.count == 2 {
                 if(matchInfo.localteam_id == matchInfo.runs[0].team_id) {
-                    team1Score.text = String(matchInfo.runs[0].score ?? 0)+"/"
-                    team1Over.text = String(matchInfo.runs[0].overs ?? 0)
+                    team1Score.text = String(matchInfo.runs[0].score ?? 0)+"/" + String(matchInfo.runs[0].wickets ?? 0)
                     team1Over.text = "("+String(matchInfo.runs[0].overs ?? 0)+")"
                     
-                    team2Score.text = String(matchInfo.runs[1].score ?? 0)+"/"
-                    team2Over.text = String(matchInfo.runs[1].overs ?? 0)
+                    team2Score.text = String(matchInfo.runs[1].score ?? 0)+"/" + String(matchInfo.runs[1].wickets ?? 0)
                     team2Over.text = "("+String(matchInfo.runs[1].overs ?? 0)+")"
                 } else {
-                    team1Score.text = String(matchInfo.runs[1].score ?? 0)+"/"
-                    team1Over.text = String(matchInfo.runs[1].overs ?? 0)
+                    team1Score.text = String(matchInfo.runs[1].score ?? 0)+"/" + String(matchInfo.runs[1].wickets ?? 0)
                     team1Over.text = "("+String(matchInfo.runs[1].overs ?? 0)+")"
                     
-                    team2Score.text = String(matchInfo.runs[0].score ?? 0)+"/"
-                    team2Over.text = String(matchInfo.runs[0].overs ?? 0)
+                    team2Score.text = String(matchInfo.runs[0].score ?? 0)+"/" + String(matchInfo.runs[0].wickets ?? 0)
                     team2Over.text = "("+String(matchInfo.runs[0].overs ?? 0)+")"
                 }
             } else {
                 if(matchInfo.localteam_id == matchInfo.runs[0].team_id) {
-                    team1Score.text = String(matchInfo.runs[0].score ?? 0)+"/"
-                    team1Over.text = String(matchInfo.runs[0].overs ?? 0)
+                    team1Score.text = String(matchInfo.runs[0].score ?? 0)+"/" + String(matchInfo.runs[0].wickets ?? 0)
                     team1Over.text = "("+String(matchInfo.runs[0].overs ?? 0)+")"
                 } else {
-                    team2Score.text = String(matchInfo.runs[0].score ?? 0)+"/"
-                    team2Over.text = String(matchInfo.runs[0].overs ?? 0)
+                    team2Score.text = String(matchInfo.runs[0].score ?? 0)+"/" + String(matchInfo.runs[0].wickets ?? 0)
                     team2Over.text = "("+String(matchInfo.runs[0].overs ?? 0)+")"
                 }
             }

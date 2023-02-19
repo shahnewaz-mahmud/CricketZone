@@ -11,8 +11,23 @@ class MatchDetailsViewModel {
     @Published var matchDetails: MatchData?
     @Published var matchInfo: MatchData?
     
-    func fetchMatchDetails(matchId: Int) {
-
+    var autoRefreshTimer: Timer?
+    
+    
+    
+    func fetchMatchDetails(matchId: Int, isLive: Bool) {
+        
+        syncMatchData(matchId: matchId)
+        
+        if isLive == true {
+            autoRefreshTimer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { timer in
+                self.syncMatchData(matchId: matchId)
+            }
+        }
+    }
+    
+    
+    func syncMatchData(matchId: Int){
         guard let url = cricketAPIConfig.getMatchDetailsAPIUrl(matchId: matchId) else {
             return
         }
@@ -34,5 +49,9 @@ class MatchDetailsViewModel {
                 self.matchInfo = match.data
             }
         }
+        
+        
     }
+    
+    
 }

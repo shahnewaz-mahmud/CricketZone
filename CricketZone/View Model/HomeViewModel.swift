@@ -17,12 +17,37 @@ class HomeViewModel {
 
     
     func fetchLiveMatch() {
+        guard let url = cricketAPIConfig.apiGetLiveMatchURL else {
+            return
+        }
+        print(url)
+        
+        APIService.fetchData(from: url) { (result: Result<MatchList, Error>) in
+            switch result {
+            case .failure(let error):
+                // TO-DO: handle no internet error
+                if let error = error as? URLError,
+                   error.code == .notConnectedToInternet {
+                    print("Internet connection error")
+                } else {
+                    print(error.localizedDescription)
+                }
+            case .success(let match):
+                print("Match Result",match)
+                if ((match.data?.isEmpty) != nil) {
+                    self.fetchUpcomingMatch()
+                } else {
+                    self.liveMatchList = match.data
+                }
+                
+            }
+        }
+    }
+    
+    func fetchUpcomingMatch() {
         guard let url = cricketAPIConfig.apiGetUpcomingMatchURL else {
             return
         }
-//        guard let url = cricketAPIConfig.apiGetLiveMatchURL else {
-//            return
-//        }
         print(url)
         
         APIService.fetchData(from: url) { (result: Result<MatchList, Error>) in
@@ -41,6 +66,7 @@ class HomeViewModel {
             }
         }
     }
+    
     
     func fetchRecentMatch() {
         guard let url = cricketAPIConfig.apiGetRecentMatchURL else {
@@ -65,7 +91,7 @@ class HomeViewModel {
         }
     }
     
-    func goToMatchDetailsPage(matchId: Int, originVC: HomeViewController) {
+    func goToMatchDetailsPage(matchId: Int, isLive: Bool, originVC: HomeViewController) {
         let matchDetailsVC = UIStoryboard(
             name: "Home", bundle: nil
         ).instantiateViewController(withIdentifier: Constants.matchDetailsVCId)
@@ -75,6 +101,7 @@ class HomeViewModel {
 
         //matchDetailsVC.loadViewIfNeeded()
         matchDetailsVC.selectedMatchId = matchId
+        matchDetailsVC.isLive = isLive
 
         //newsDetailsVC.newsDetailsViewModel.setNewsDetails(newsDetails: newsList.value?[indexpath.row])
         originVC.navigationController?.pushViewController(matchDetailsVC, animated: true)

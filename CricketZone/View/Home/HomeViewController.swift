@@ -110,7 +110,13 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let liveMatchList = homeViewModel.liveMatchList else { return }
         
-        homeViewModel.goToMatchDetailsPage(matchId: liveMatchList[indexPath.row].id ?? 123, originVC: self)
+        if liveMatchList[indexPath.row].status != "NS" {
+            homeViewModel.goToMatchDetailsPage(matchId: liveMatchList[indexPath.row].id ?? 123, isLive: true, originVC: self)
+        } else {
+            homeViewModel.goToMatchDetailsPage(matchId: liveMatchList[indexPath.row].id ?? 123, isLive: false, originVC: self)
+        }
+        
+        
     }
 }
 
@@ -137,7 +143,7 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let recentMatchCell = homeViewModel.recentMatchList else { return }
         
-        homeViewModel.goToMatchDetailsPage(matchId: recentMatchCell[indexPath.row].id ?? 123, originVC: self)
+        homeViewModel.goToMatchDetailsPage(matchId: recentMatchCell[indexPath.row].id ?? 123, isLive: false, originVC: self)
     }
 }
 
