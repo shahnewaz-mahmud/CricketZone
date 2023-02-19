@@ -14,6 +14,7 @@ class HomeViewModel {
     
     @Published var liveMatchList: [Match]?
     @Published var recentMatchList: [Match]?
+    @Published var allPlayerList: [PlayerInfo]?
 
     
     func fetchLiveMatch() {
@@ -90,6 +91,43 @@ class HomeViewModel {
             }
         }
     }
+    
+    func fetchAllPlayers() {
+        guard let url = cricketAPIConfig.apiGetAllPlayersURL else {
+            return
+        }
+        print(url)
+        
+        APIService.fetchData(from: url) { (result: Result<PlayerList, Error>) in
+            switch result {
+            case .failure(let error):
+                // TO-DO: handle no internet error
+                if let error = error as? URLError,
+                   error.code == .notConnectedToInternet {
+                    print("Internet connection error")
+                } else {
+                    print(error.localizedDescription)
+                }
+            case .success(let playerList):
+                print("Player List: ",playerList)
+                self.allPlayerList = playerList.data
+            }
+        }
+    }
+    
+    
+    func savePlayersToCoreData(){
+        if let allPlayerList = self.allPlayerList {
+            if allPlayerList.count > 0{
+                for i in 0...allPlayerList.count-1{
+                    CoreDataHelper.shared.addPlayer(player: allPlayerList[i])
+                }
+            }
+            
+        }
+    }
+    
+    
     
     func goToMatchDetailsPage(matchId: Int, isLive: Bool, originVC: HomeViewController) {
         let matchDetailsVC = UIStoryboard(

@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Tab View Controller-->
         <scene sceneID="i3h-kX-4to">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="eXj-Uy-il6" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="eXj-Uy-il6" customClass="TabViewController" customModule="CricketZone" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vdo-ZQ-6im" customClass="RoundedTabBar" customModule="CricketZone" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -21,6 +21,8 @@
                     <connections>
                         <segue destination="EAE-oL-rh8" kind="relationship" relationship="viewControllers" id="A7f-bF-6sc"/>
                         <segue destination="x2u-qm-JV7" kind="relationship" relationship="viewControllers" id="ZHH-ii-ZCB"/>
+                        <segue destination="L3d-Su-IFE" kind="relationship" relationship="viewControllers" id="0gL-JX-heZ"/>
+                        <segue destination="e4B-Kg-R41" kind="relationship" relationship="viewControllers" id="DaQ-5U-eKg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OeD-wi-tjG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -35,7 +37,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lZF-XR-UMJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28" y="459"/>
+            <point key="canvasLocation" x="-469" y="465"/>
         </scene>
         <!--Fixture-->
         <scene sceneID="dLL-0d-vmt">
@@ -45,7 +47,27 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MlG-oV-8rR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="294" y="452"/>
+            <point key="canvasLocation" x="-42" y="465"/>
+        </scene>
+        <!--Player-->
+        <scene sceneID="i0l-Wq-iQZ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Player" id="L3d-Su-IFE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="0yK-Yl-bIM"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RwG-kL-jpu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="322" y="465"/>
+        </scene>
+        <!--Rank-->
+        <scene sceneID="Tkp-Mr-HPB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Rank" id="e4B-Kg-R41" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="iI9-fR-o2M"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qMp-Jv-arl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="659" y="465"/>
         </scene>
     </scenes>
 </document>

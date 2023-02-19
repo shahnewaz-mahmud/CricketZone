@@ -29,17 +29,20 @@ class HomeViewController: UIViewController {
         recentMatchTableView.dataSource = self
         recentMatchTableView.delegate = self
         
+        
         configureLiveMatchCell()
         configureRecentMatchCell()
         
         homeViewModel.fetchLiveMatch()
         homeViewModel.fetchRecentMatch()
+        homeViewModel.fetchAllPlayers()
         
         setupBinder()
         
         testMethod()
 
     }
+    
     
     func configureHeaderView() {
         headerView.clipsToBounds = true

@@ -23,6 +23,7 @@ class RecentMatchTVCell: UITableViewCell {
     @IBOutlet weak var team2Score: UILabel!
     @IBOutlet weak var team2Over: UILabel!
     
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,18 +45,35 @@ class RecentMatchTVCell: UITableViewCell {
         let dateTime = Shared().getReadableDateTime(data: matchInfo.starting_at ?? "")
         matchDate.text = dateTime.1 + ", " + dateTime.0
         
-        if(matchInfo.localteam_id == matchInfo.runs[0].team_id) {
-            team1Score.text = String(matchInfo.runs[0].score ?? 0)+"/"
-            team1Over.text = "("+String(matchInfo.runs[0].overs ?? 0)+")"
-            
-            team2Score.text = String(matchInfo.runs[1].score ?? 0)+"/"
-            team2Over.text = "("+String(matchInfo.runs[1].overs ?? 0)+")"
+        if matchInfo.runs.count == 2 {
+            if(matchInfo.localteam_id == matchInfo.runs[0].team_id) {
+                team1Score.text = String(matchInfo.runs[0].score ?? 0)+"/" + String(matchInfo.runs[0].wickets ?? 0)
+                team1Over.text = "("+String(matchInfo.runs[0].overs ?? 0)+")"
+                
+                team2Score.text = String(matchInfo.runs[1].score ?? 0)+"/" + String(matchInfo.runs[1].wickets ?? 0)
+                team2Over.text = "("+String(matchInfo.runs[1].overs ?? 0)+")"
+            } else {
+                team1Score.text = String(matchInfo.runs[1].score ?? 0)+"/" + String(matchInfo.runs[1].wickets ?? 0)
+                team1Over.text = "("+String(matchInfo.runs[1].overs ?? 0)+")"
+                
+                team2Score.text = String(matchInfo.runs[0].score ?? 0)+"/" + String(matchInfo.runs[0].wickets ?? 0)
+                team2Over.text = "("+String(matchInfo.runs[0].overs ?? 0)+")"
+            }
+        } else if matchInfo.runs.count == 1 {
+            if(matchInfo.localteam_id == matchInfo.runs[0].team_id) {
+                team1Score.text = String(matchInfo.runs[0].score ?? 0)+"/" + String(matchInfo.runs[0].wickets ?? 0)
+                team1Over.text = "("+String(matchInfo.runs[0].overs ?? 0)+")"
+            } else {
+                team2Score.text = String(matchInfo.runs[0].score ?? 0)+"/" + String(matchInfo.runs[0].wickets ?? 0)
+                team2Over.text = "("+String(matchInfo.runs[0].overs ?? 0)+")"
+            }
         } else {
-            team1Score.text = String(matchInfo.runs[1].score ?? 0)+"/"
-            team1Over.text = "("+String(matchInfo.runs[1].overs ?? 0)+")"
+            team1Score.text = ""
+            team1Over.text = ""
             
-            team2Score.text = String(matchInfo.runs[0].score ?? 0)+"/"
-            team2Over.text = "("+String(matchInfo.runs[0].overs ?? 0)+")"
+            team2Score.text = ""
+            team2Over.text = ""
+        
         }
         
         team1Flag.sd_setImage(

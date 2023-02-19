@@ -381,7 +381,7 @@
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f58-7W-8sL">
-                                        <rect key="frame" x="0.0" y="104" width="390" height="471"/>
+                                        <rect key="frame" x="0.0" y="104.33333333333329" width="390" height="470.66666666666674"/>
                                         <connections>
                                             <segue destination="B3v-Cd-d06" kind="embed" id="mfk-CH-QfN"/>
                                         </connections>
@@ -695,14 +695,15 @@
             <objects>
                 <viewController id="B3v-Cd-d06" customClass="LiveScoreViewController" customModule="CricketZone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h7C-BD-2e2">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="471"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="470.66666666666669"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1Am-Ma-tqA">
-                                <rect key="frame" x="0.0" y="20" width="390" height="451"/>
+                                <rect key="frame" x="0.0" y="20" width="390" height="450.66666666666669"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="aqw-9V-7cd"/>
                         <color key="backgroundColor" name="Main Background"/>
                         <constraints>
                             <constraint firstItem="1Am-Ma-tqA" firstAttribute="leading" secondItem="h7C-BD-2e2" secondAttribute="leading" id="HSR-Ae-FN7"/>

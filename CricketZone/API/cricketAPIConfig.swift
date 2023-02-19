@@ -63,6 +63,19 @@ final class cricketAPIConfig {
         return url
     }
     
+    static var apiGetAllPlayersURL: URL? {
+        guard let apiURL = URL(string: apiBaseURL) else {
+            return nil
+        }
+        var components = URLComponents(url: apiURL, resolvingAgainstBaseURL: false)
+        components?.path += "/players"
+        components?.queryItems = [
+            URLQueryItem(name: "fields[teams]", value: "fullname,image_path"),
+            URLQueryItem(name: "api_token", value: apiKey)
+        ]
+        guard let url = components?.url else { return nil }
+        return url
+    }
     
     static func getMatchDetailsAPIUrl(matchId: Int) -> URL?{
         var apiGetMatchDetailsURL: URL? {
