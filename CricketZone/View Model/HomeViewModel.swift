@@ -93,26 +93,32 @@ class HomeViewModel {
     }
     
     func fetchAllPlayers() {
-        guard let url = cricketAPIConfig.apiGetAllPlayersURL else {
-            return
-        }
-        print(url)
         
-        APIService.fetchData(from: url) { (result: Result<PlayerList, Error>) in
-            switch result {
-            case .failure(let error):
-                // TO-DO: handle no internet error
-                if let error = error as? URLError,
-                   error.code == .notConnectedToInternet {
-                    print("Internet connection error")
-                } else {
-                    print(error.localizedDescription)
+        let playerList = CoreDataHelper.shared.searchPlayers(searchText: "A")
+        if playerList.isEmpty {
+            print("Fetching from API")
+            guard let url = cricketAPIConfig.apiGetAllPlayersURL else {
+                return
+            }
+            print(url)
+            
+            APIService.fetchData(from: url) { (result: Result<PlayerList, Error>) in
+                switch result {
+                case .failure(let error):
+                    // TO-DO: handle no internet error
+                    if let error = error as? URLError,
+                       error.code == .notConnectedToInternet {
+                        print("Internet connection error")
+                    } else {
+                        print(error.localizedDescription)
+                    }
+                case .success(let playerList):
+                    self.allPlayerList = playerList
+                    self.savePlayersToCoreData()
                 }
-            case .success(let playerList):
-                self.allPlayerList = playerList
-                self.savePlayersToCoreData()
             }
         }
+        
     }
     
     

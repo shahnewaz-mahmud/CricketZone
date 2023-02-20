@@ -15,49 +15,45 @@ import CoreData
 class CoreDataHelper{
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
     
     static let shared = CoreDataHelper()
 
-    
     func addItems(data: PlayerList) {
-
-            guard let entity = NSEntityDescription.entity(forEntityName: "PlayerModel", in: context) else {
+        let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        privateContext.parent = context
+        
+        privateContext.performAndWait {
+            guard let entity = NSEntityDescription.entity(forEntityName: "PlayerModel", in: privateContext) else {
                 return
             }
 
             for item in data {
                 print("Saving Player \(String(describing: item.id))")
                 
-                let dataObject = NSManagedObject(entity: entity, insertInto: context)
+                let dataObject = NSManagedObject(entity: entity, insertInto: privateContext)
                 dataObject.setValue(item.id, forKey: "id")
                 dataObject.setValue(item.fullname, forKey: "fullName")
                 dataObject.setValue(item.image_path, forKey: "imagePath")
             }
 
             do {
-                try context.save()
-                print("Saving Completed")
+                try privateContext.save()
+                context.performAndWait {
+                    do {
+                        try context.save()
+                        print("Saving Completed")
+                    } catch let error as NSError {
+                        print("Could not save to the main context. \(error), \(error.userInfo)")
+                    }
+                }
             } catch let error as NSError {
-                print("Could not save. \(error), \(error.userInfo)")
+                print("Could not save to the private context. \(error), \(error.userInfo)")
             }
-        }
-    
-    
-    func getAllPlayers() {
-        let fetchRequest = NSFetchRequest<PlayerModel>(entityName: "PlayerModel")
-        let format = ""
-        let predicate = NSPredicate(format: format)
-        fetchRequest.predicate = predicate
-        fetchRequest.fetchLimit = 15
-        
-        do {
-            PlayerModel.playerList = try context.fetch(fetchRequest)
-        } catch {
-            print(error)
         }
     }
     
-    
+
     
     func searchPlayers(searchText: String) -> [PlayerModel] {
         

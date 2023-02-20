@@ -25,6 +25,7 @@ class Constants {
     static let winProbabilityTableViewCellId = "WinProbabilityTableViewCell"
     static let calendarCollectionViewCellId = "CalendarCollectionViewCell"
     static let leagueCollectionViewCellId = "LeagueCollectionViewCell"
+    static let rankTableViewCellId = "RankTableViewCell"
     
 }
 
