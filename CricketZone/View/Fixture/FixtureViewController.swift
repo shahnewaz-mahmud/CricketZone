@@ -19,6 +19,12 @@ class FixtureViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let fixtureViewModel = FixtureViewModel()
+    
+    var selectedCalendarIndex = 0
+    var deselectedCalendarIndex = 1
+    
+    var selectedLeagueIndex = 4
+    var deselectedLeagueIndex = 5
  
     
     private var cancellables: Set<AnyCancellable> = []
@@ -49,6 +55,23 @@ class FixtureViewController: UIViewController {
         setupBinder()
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //self.navigationController.isHidd
+    }
+    
+    @IBAction func resetCalenarAction(_ sender: Any) {
+        selectedCalendarIndex = fixtureViewModel.todaysIndex ?? 0
+        calendarCollectionView.reloadData()
+        scrollToIndex(index: fixtureViewModel.todaysIndex ?? 0)
+        fixtureViewModel.fetcMatch()
+        
+        selectedLeagueIndex = 4
+        deselectedLeagueIndex = 5
+        leagueCollectionView.reloadData()
+        
+    }
+    
     
     func configureHeaderView() {
         headerBackground.clipsToBounds = true
@@ -87,7 +110,8 @@ class FixtureViewController: UIViewController {
         fixtureViewModel.$dateList.sink { [weak self] _ in
             DispatchQueue.main.async {
                 self?.calendarCollectionView.reloadData()
-                self?.scrollToIndex(index: self?.fixtureViewModel.todaysIndex ?? 0)
+                self?.selectedCalendarIndex = self?.fixtureViewModel.todaysIndex ?? 0
+                self?.scrollToIndex(index: self?.selectedCalendarIndex ?? 0)
             }
         }.store(in: &cancellables)
         
@@ -128,7 +152,22 @@ extension FixtureViewController: UICollectionViewDataSource {
                     
                     calendarCell.day.text = fixtureViewModel.dateList?[indexPath.row].day
                     calendarCell.date.text = String(fixtureViewModel.dateList?[indexPath.row].dayNumber ?? 0)
+            
+            if indexPath.row == selectedCalendarIndex {
+                calendarCell.cellBackground.backgroundColor = UIColor(named: "Solid White")
+                calendarCell.day.textColor = UIColor(named: "Secondary Color")
+                calendarCell.date.textColor = UIColor(named: "Secondary Color")
+                
+            } else {
+                calendarCell.cellBackground.backgroundColor = UIColor(named: "Secondary Color")
+                calendarCell.day.textColor = UIColor(named: "Solid White")
+                calendarCell.date.textColor = UIColor(named: "Solid White")
+            }
+            
+            
+            
                     return calendarCell
+            
                 case 1:
                     let leagueCell = calendarCollectionView.dequeueReusableCell(withReuseIdentifier: Constants.leagueCollectionViewCellId, for: indexPath) as? LeagueCollectionViewCell
                     
@@ -149,12 +188,63 @@ extension FixtureViewController: UICollectionViewDataSource {
 
 extension FixtureViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == calendarCollectionView {
+            //select the date from userClick and change color
+            if let selectedCell = calendarCollectionView.cellForItem(at: indexPath) as? CalendarCollectionViewCell {
+                
+                UIView.animate(withDuration: 0.5, delay: 0, animations: {
+                    selectedCell.cellBackground.backgroundColor = UIColor(named: "Solid White")
+                    selectedCell.day.textColor = UIColor(named: "Secondary Color")
+                    selectedCell.date.textColor = UIColor(named: "Secondary Color")
+                })
+                deselectedCalendarIndex = selectedCalendarIndex
+                selectedCalendarIndex = indexPath.row
+                
+                fixtureViewModel.fetcMatch(date: fixtureViewModel.dateList?[indexPath.row].fullDate ?? "")
+            }
+            
+            //Change the color of deselected date
+            let deselectedIndexPath = IndexPath(item: deselectedCalendarIndex, section: 0)
+            if let deselectedCell = calendarCollectionView.cellForItem(at: deselectedIndexPath) as? CalendarCollectionViewCell {
+                deselectedCell.cellBackground.backgroundColor = UIColor(named: "Secondary Color")
+                deselectedCell.day.textColor = UIColor(named: "Solid White")
+                deselectedCell.date.textColor = UIColor(named: "Solid White")
+            }
+        } else {
+            //for league collection view click
+            if let selectedCell = leagueCollectionView.cellForItem(at: indexPath) as? LeagueCollectionViewCell {
+                
+                UIView.animate(withDuration: 0.5, delay: 0, animations: {
+                    selectedCell.cellBackground.backgroundColor = UIColor(named: "Secondary Color")
+                    selectedCell.leagueName.textColor = UIColor(named: "Solid White")
+                    
+                })
+                deselectedLeagueIndex = selectedLeagueIndex
+                selectedLeagueIndex = indexPath.row
+                
+                fixtureViewModel.fetcMatch(leagueId: LeagueInfo.LeagueInfoList[indexPath.row].id ?? 0)
+            }
+            
+            //Change the color of deselected league
+            let deselectedIndexPath = IndexPath(item: deselectedLeagueIndex, section: 0)
+            if let deselectedCell = leagueCollectionView.cellForItem(at: deselectedIndexPath) as? LeagueCollectionViewCell {
+                deselectedCell.cellBackground.backgroundColor = UIColor(named: "Main Background")
+                deselectedCell.leagueName.textColor = UIColor(named: "Secondary Color")
+               
+            }
+            
+            
+        }
+    }
+    
 }
 
 
 extension FixtureViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        print("row ",fixtureViewModel.matchList?.count ?? 0)
+        return fixtureViewModel.matchList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

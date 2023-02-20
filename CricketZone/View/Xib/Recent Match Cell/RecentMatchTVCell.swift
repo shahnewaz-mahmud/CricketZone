@@ -24,6 +24,7 @@ class RecentMatchTVCell: UITableViewCell {
     @IBOutlet weak var team2Over: UILabel!
     
 
+    @IBOutlet weak var cellHeightConstraint: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,6 +47,7 @@ class RecentMatchTVCell: UITableViewCell {
         matchDate.text = dateTime.1 + ", " + dateTime.0
         
         if matchInfo.runs.count == 2 {
+            cellHeightConstraint.constant  = 170
             if(matchInfo.localteam_id == matchInfo.runs[0].team_id) {
                 team1Score.text = String(matchInfo.runs[0].score ?? 0)+"/" + String(matchInfo.runs[0].wickets ?? 0)
                 team1Over.text = "("+String(matchInfo.runs[0].overs ?? 0)+")"
@@ -60,6 +62,7 @@ class RecentMatchTVCell: UITableViewCell {
                 team2Over.text = "("+String(matchInfo.runs[0].overs ?? 0)+")"
             }
         } else if matchInfo.runs.count == 1 {
+            cellHeightConstraint.constant  = 170
             if(matchInfo.localteam_id == matchInfo.runs[0].team_id) {
                 team1Score.text = String(matchInfo.runs[0].score ?? 0)+"/" + String(matchInfo.runs[0].wickets ?? 0)
                 team1Over.text = "("+String(matchInfo.runs[0].overs ?? 0)+")"
@@ -73,6 +76,9 @@ class RecentMatchTVCell: UITableViewCell {
             
             team2Score.text = ""
             team2Over.text = ""
+            matchResult.text = ""
+            
+            cellHeightConstraint.constant  = 150
         
         }
         

@@ -60,11 +60,27 @@ class FixtureViewModel {
     }
     
     
-    func fetcMatch() {
-        guard let url = cricketAPIConfig.apiGetUpcomingMatchURL else {
-            return
+    func fetcMatch(date: String = "", leagueId: Int = 0) {
+        
+        let url: URL?
+        
+        if(date != "" && leagueId == 0) {
+            url = cricketAPIConfig.getSpecificDateFixtureAPIUrl(date: date)
+            print(url ?? "")
+        } else if (leagueId != 0 && date == "") {
+            url = cricketAPIConfig.getSpecificLeagueFixtureAPIUrl(leagueId: leagueId)
+            print(url ?? "")
+
+        } else {
+            url = cricketAPIConfig.apiGetUpcomingMatchURL
+            print(url ?? "")
+            
         }
-        print(url)
+            
+            
+        
+        guard let url = url else {return}
+        
         
         APIService.fetchData(from: url) { (result: Result<MatchList, Error>) in
             switch result {

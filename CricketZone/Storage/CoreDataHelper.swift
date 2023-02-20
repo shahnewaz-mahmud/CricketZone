@@ -19,22 +19,28 @@ class CoreDataHelper{
     static let shared = CoreDataHelper()
 
     
-    func addPlayer(player: PlayerInfo){
-        
-        guard let id = player.id, let fullName = player.fullname, let imagePath = player.image_path else { return }
+    func addItems(data: PlayerList) {
+
+            guard let entity = NSEntityDescription.entity(forEntityName: "PlayerModel", in: context) else {
+                return
+            }
+
+            for item in data {
+                print("Saving Player \(String(describing: item.id))")
                 
-        let newPlayer = PlayerModel(context: context)
-            
-        newPlayer.id = Int64(id)
-        newPlayer.fullName = fullName
-        newPlayer.imagePath = imagePath
-        do {
-            try context.save()
-        } catch {
-            print(error)
+                let dataObject = NSManagedObject(entity: entity, insertInto: context)
+                dataObject.setValue(item.id, forKey: "id")
+                dataObject.setValue(item.fullname, forKey: "fullName")
+                dataObject.setValue(item.image_path, forKey: "imagePath")
+            }
+
+            do {
+                try context.save()
+                print("Saving Completed")
+            } catch let error as NSError {
+                print("Could not save. \(error), \(error.userInfo)")
+            }
         }
-       
-    }
     
     
     func getAllPlayers() {
@@ -48,6 +54,28 @@ class CoreDataHelper{
             PlayerModel.playerList = try context.fetch(fetchRequest)
         } catch {
             print(error)
+        }
+    }
+    
+    
+    
+    func searchPlayers(searchText: String) -> [PlayerModel] {
+        
+        let fetchRequest = NSFetchRequest<PlayerModel>(entityName: "PlayerModel")
+        let format = "fullName CONTAINS[c] %@"
+        fetchRequest.fetchLimit = 15
+
+        print(format)
+
+        let predicate = NSPredicate(format: format,searchText)
+        fetchRequest.predicate = predicate
+        
+        do {
+            let playerList = try context.fetch(fetchRequest)
+            return playerList
+        } catch {
+            print(error)
+            return [PlayerModel]()
         }
     }
     

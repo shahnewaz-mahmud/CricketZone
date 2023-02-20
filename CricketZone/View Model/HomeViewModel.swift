@@ -14,7 +14,7 @@ class HomeViewModel {
     
     @Published var liveMatchList: [Match]?
     @Published var recentMatchList: [Match]?
-    @Published var allPlayerList: [PlayerInfo]?
+    @Published var allPlayerList: PlayerList?
 
     
     func fetchLiveMatch() {
@@ -109,22 +109,16 @@ class HomeViewModel {
                     print(error.localizedDescription)
                 }
             case .success(let playerList):
-                print("Player List: ",playerList)
-                self.allPlayerList = playerList.data
+                self.allPlayerList = playerList
+                self.savePlayersToCoreData()
             }
         }
     }
     
     
     func savePlayersToCoreData(){
-        if let allPlayerList = self.allPlayerList {
-            if allPlayerList.count > 0{
-                for i in 0...allPlayerList.count-1{
-                    CoreDataHelper.shared.addPlayer(player: allPlayerList[i])
-                }
-            }
-            
-        }
+        guard let allPlayerList = allPlayerList else {return}
+        CoreDataHelper.shared.addItems(data: allPlayerList)
     }
     
     

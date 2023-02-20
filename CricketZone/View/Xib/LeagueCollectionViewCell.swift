@@ -9,6 +9,7 @@ import UIKit
 
 class LeagueCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var cellBackground: UIView!
     
     @IBOutlet weak var leagueImage: UIImageView!
     
@@ -16,6 +17,8 @@ class LeagueCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         leagueImage.layer.cornerRadius = 20
+        cellBackground.layer.cornerRadius = 20
+        cellBackground.dropShadow()
         // Initialization code
     }
 

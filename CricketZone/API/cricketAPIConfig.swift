@@ -12,7 +12,9 @@ final class cricketAPIConfig {
     private init() {}
     
     private static let apiBaseURL = "https://cricket.sportmonks.com/api/v2.0"
-    private static let apiKey = "qgcaTr1JcWOsR9trRy8ScGLyoGLnnVZDMo31Ax2EB52W74FYxCQ3EPjBGsr0"
+    //private static let apiKey = "qgcaTr1JcWOsR9trRy8ScGLyoGLnnVZDMo31Ax2EB52W74FYxCQ3EPjBGsr0"
+    private static let apiKey = "JUn96Ic4hBIhndkYKHOCWZS5NpH05RCmK19vDiuPsduKN9p3c7CJtiDU8a9z"
+    
     
     static var apiGetUpcomingMatchURL: URL? {
         guard let apiURL = URL(string: apiBaseURL) else {
@@ -111,6 +113,51 @@ final class cricketAPIConfig {
             return url
         }
         return apiGetPlayerDetailsURL
+    }
+    
+    static func getSpecificDateFixtureAPIUrl(date: String) -> URL?{
+        
+        let time1 = date + "T00:00:00.000000Z"
+        let time2 = date + "T24:00:00.000000Z"
+        
+        var apiSpecificDateFixtureURL: URL? {
+            guard let apiURL = URL(string: apiBaseURL) else {
+                return nil
+            }
+            var components = URLComponents(url: apiURL, resolvingAgainstBaseURL: false)
+            components?.path += "/fixtures"
+            components?.queryItems = [
+                URLQueryItem(name: "include", value: "runs,localteam,visitorteam"),
+                URLQueryItem(name: "filter[starts_between]", value: time1 + "," + time2),
+                URLQueryItem(name: "fields[teams]", value: "code,image_path"),
+                URLQueryItem(name: "sort", value: "-starting_at"),
+                URLQueryItem(name: "api_token", value: apiKey)
+            ]
+            guard let url = components?.url else { return nil }
+            return url
+        }
+        return apiSpecificDateFixtureURL
+    }
+    
+    static func getSpecificLeagueFixtureAPIUrl(leagueId: Int) -> URL?{
+      
+        var apiSpecificDateFixtureURL: URL? {
+            guard let apiURL = URL(string: apiBaseURL) else {
+                return nil
+            }
+            var components = URLComponents(url: apiURL, resolvingAgainstBaseURL: false)
+            components?.path += "/fixtures"
+            components?.queryItems = [
+                URLQueryItem(name: "include", value: "runs,localteam,visitorteam"),
+                URLQueryItem(name: "filter[league_id]", value: String(leagueId)),
+                URLQueryItem(name: "filter[status]", value: "NS"),
+                URLQueryItem(name: "fields[teams]", value: "code,image_path"),
+                URLQueryItem(name: "api_token", value: apiKey)
+            ]
+            guard let url = components?.url else { return nil }
+            return url
+        }
+        return apiSpecificDateFixtureURL
     }
    
 }

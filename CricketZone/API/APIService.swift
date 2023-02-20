@@ -45,7 +45,6 @@ final class APIService {
                 }
                 do {
                     let result = try JSONDecoder().decode(T.self, from: data)
-                    dump(result)
                     completion(.success(result))
                 } catch {
                     completion(.failure(ServiceError.jsonDecodingError))

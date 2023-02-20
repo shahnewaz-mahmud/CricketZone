@@ -96,4 +96,21 @@ extension Date {
     }
 }
 
+/**
+ Extension of UITextField to add padding in the leftSide, (used in SearchTextField)
+ */
+extension UITextField {
+    @IBInspectable var padding: CGFloat {
+        get {
+            return leftView!.frame.size.width
+        }
+        set {
+            let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: newValue, height: frame.size.height))
+            leftView = paddingView
+            leftViewMode = .always
+        }
+    }
+}
+
+
 
