@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P2l-qH-mPl">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P2l-qH-mPl">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -15,17 +14,17 @@
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="PlayerViewController" customModule="CricketZone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZI-Sc-OiH">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="172"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="181"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKB-tw-Dsh" userLabel="Search View">
-                                        <rect key="frame" x="30" y="92" width="333" height="45"/>
+                                        <rect key="frame" x="30" y="116" width="354" height="45"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="4cq-Lg-O8C">
-                                                <rect key="frame" x="0.0" y="2.6666666666666714" width="333" height="40"/>
+                                                <rect key="frame" x="0.0" y="2.5" width="354" height="40"/>
                                                 <color key="backgroundColor" red="0.10980392160000001" green="0.23137254900000001" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Do0-gw-5JM"/>
@@ -35,7 +34,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1VH-01-bcg">
-                                                <rect key="frame" x="8" y="9.6666666666666643" width="23" height="25.333333333333329"/>
+                                                <rect key="frame" x="8" y="9" width="23" height="26.5"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="23" id="Tfo-3K-864"/>
@@ -57,21 +56,30 @@
                                 </subviews>
                                 <color key="backgroundColor" name="Secondary Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="qKB-tw-Dsh" secondAttribute="bottom" constant="35" id="3Cc-Cl-C23"/>
+                                    <constraint firstAttribute="bottom" secondItem="qKB-tw-Dsh" secondAttribute="bottom" constant="20" id="3Cc-Cl-C23"/>
                                     <constraint firstItem="qKB-tw-Dsh" firstAttribute="centerX" secondItem="cZI-Sc-OiH" secondAttribute="centerX" id="AQt-BL-t7w"/>
                                     <constraint firstItem="qKB-tw-Dsh" firstAttribute="leading" secondItem="cZI-Sc-OiH" secondAttribute="leading" constant="30" id="Im3-OL-Oxi"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="K7h-La-x6N">
-                                <rect key="frame" x="0.0" y="192" width="393" height="660"/>
+                                <rect key="frame" x="0.0" y="201" width="414" height="695"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="mNh-Xv-h6Q">
+                                <rect key="frame" x="30" y="58" width="107" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Fxm-Jx-ewV"/>
+                                    <constraint firstAttribute="width" constant="107" id="vhU-ZA-MkV"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="Main Background"/>
                         <constraints>
+                            <constraint firstItem="mNh-Xv-h6Q" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="1PC-rd-6UR"/>
                             <constraint firstItem="cZI-Sc-OiH" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="5VG-DN-SPB"/>
                             <constraint firstAttribute="bottom" secondItem="K7h-La-x6N" secondAttribute="bottom" id="8pe-yU-kEH"/>
+                            <constraint firstItem="mNh-Xv-h6Q" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="-30" id="Kxa-oH-Ydj"/>
                             <constraint firstItem="cZI-Sc-OiH" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.201901" id="LBt-6Y-WOy"/>
                             <constraint firstItem="K7h-La-x6N" firstAttribute="top" secondItem="cZI-Sc-OiH" secondAttribute="bottom" constant="20" id="P3d-PS-nQ2"/>
                             <constraint firstItem="cZI-Sc-OiH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="lym-VJ-Hey"/>
@@ -101,7 +109,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hXL-Xi-ZN4">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -115,7 +123,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="logo" width="107" height="40"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <namedColor name="Main Background">
             <color red="0.96100002527236938" green="0.97299998998641968" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

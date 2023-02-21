@@ -50,10 +50,10 @@ struct TeamInfo: Codable {
     let image_path: String?
     let country_id: Int?
     let national_team: Bool?
-    let inSquad: InSquad?
+    let in_squad: InSquad?
 }
 
 // MARK: - InSquad
 struct InSquad: Codable {
-    let seasonID, leagueID: Int?
+    let season_id, league_id: Int?
 }

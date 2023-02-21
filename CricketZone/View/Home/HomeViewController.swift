@@ -14,6 +14,11 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var liveMatchCollectionView: UICollectionView!
     @IBOutlet weak var recentMatchTableView: UITableView!
+    @IBOutlet weak var liveMatchCollectionViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var headerSectionHeightConstraint: NSLayoutConstraint!
+    
+    
+    @IBOutlet weak var recentMatchTopSpaceConstraint: NSLayoutConstraint!
     
     var homeViewModel = HomeViewModel()
     
@@ -32,10 +37,12 @@ class HomeViewController: UIViewController {
         
         configureLiveMatchCell()
         configureRecentMatchCell()
+        configureRecentMatchHeader()
         
         homeViewModel.fetchLiveMatch()
         homeViewModel.fetchRecentMatch()
         homeViewModel.fetchAllPlayers()
+        homeViewModel.fetchAllSeasons()
         
         setupBinder()
         
@@ -64,6 +71,10 @@ class HomeViewController: UIViewController {
     func configureRecentMatchCell(){
         let recentMatchNib = UINib(nibName: Constants.recentMatchTVCellId, bundle: nil)
         recentMatchTableView.register(recentMatchNib, forCellReuseIdentifier: Constants.recentMatchTVCellId)
+    }
+    func configureRecentMatchHeader(){
+        let headerNib = UINib(nibName: Constants.playerTeamUITableViewHeaderViewId, bundle: nil)
+        recentMatchTableView.register(headerNib, forHeaderFooterViewReuseIdentifier: Constants.playerTeamUITableViewHeaderViewId)
     }
     
     func setupBinder() {
@@ -125,7 +136,7 @@ extension HomeViewController: UICollectionViewDelegate {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return homeViewModel.recentMatchList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -140,6 +151,25 @@ extension HomeViewController: UITableViewDataSource {
         return recentMatchCell
 
     }
+    
+    //Header
+    
+    //For tableView Section Header
+        func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+            if section == 0
+            {
+                let currentTeamHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: Constants.playerTeamUITableViewHeaderViewId) as! PlayerTeamUITableViewHeaderView
+                currentTeamHeader.headerLabel.text = "Recent Matches"
+                return currentTeamHeader
+            } else {
+                return UIView()
+            }
+        }
+    
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
 }
 
 extension HomeViewController: UITableViewDelegate {
@@ -148,6 +178,36 @@ extension HomeViewController: UITableViewDelegate {
         
         homeViewModel.goToMatchDetailsPage(matchId: recentMatchCell[indexPath.row].id ?? 123, isLive: false, originVC: self)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > 100 {
+                self.view.layoutIfNeeded() // <-- Call layoutIfNeeded() first
+                
+            UIView.animate(withDuration: 0.5, delay: 0, animations: { [weak self] in
+                    guard let self = self else {return}
+                    self.liveMatchCollectionView.isHidden = true
+                    self.headerSectionHeightConstraint.constant = 140
+                    self.recentMatchTopSpaceConstraint.constant = 10
+                    
+                    self.view.layoutIfNeeded() // <-- Call layoutIfNeeded() again inside the animation block
+                })
+            } else {
+                self.view.layoutIfNeeded()
+                
+                UIView.animate(withDuration: 0.5, delay: 0, animations: { [weak self] in
+                    guard let self = self else {return}
+                    
+                    self.headerSectionHeightConstraint.constant = 150
+                    self.recentMatchTopSpaceConstraint.constant = 135
+                    self.liveMatchCollectionView.isHidden = false
+                    self.view.layoutIfNeeded()
+                })
+                
+                
+            }
+    }
+    
+    
 }
 
 

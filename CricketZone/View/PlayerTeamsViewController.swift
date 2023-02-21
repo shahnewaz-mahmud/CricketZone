@@ -90,8 +90,19 @@ extension PlayerTeamsViewController: UITableViewDataSource {
                 currentTeamCell.nationalTeam.isHidden = true
             }
             
-            currentTeamCell.leagueName.text = "Big Bash League"
-            currentTeamCell.season.text = "2023"
+            let allSeason = UserDefaultsHelper.shared.getSavedSeasons(key: "Season")
+            
+            let leagueId = PlayerDetailsViewModel.shared.playerDetails?.teams?[indexPath.row].in_squad?.league_id ?? 0
+            
+            for league in LeagueInfo.LeagueInfoList {
+                if league.id == leagueId {
+                    currentTeamCell.leagueName.text = league.fullName
+                }
+            }
+            
+            let seasonName = allSeason?[PlayerDetailsViewModel.shared.playerDetails?.teams?[indexPath.row].in_squad?.season_id ?? 0]
+            
+            currentTeamCell.season.text = "Season: " + (seasonName ?? "N/A")
             
             return currentTeamCell
             
@@ -111,9 +122,19 @@ extension PlayerTeamsViewController: UITableViewDataSource {
             } else {
                 playedTeamCell.nationalTeam.isHidden = true
             }
+            let allSeason = UserDefaultsHelper.shared.getSavedSeasons(key: "Season")
             
-            playedTeamCell.leagueName.text = "Big Bash League"
-            playedTeamCell.season.text = "2023"
+            let leagueId = PlayerDetailsViewModel.shared.playerDetails?.teams?[indexPath.row].in_squad?.league_id ?? 0
+            
+            for league in LeagueInfo.LeagueInfoList {
+                if league.id == leagueId {
+                    playedTeamCell.leagueName.text = league.fullName
+                }
+            }
+            
+            let seasonName = allSeason?[PlayerDetailsViewModel.shared.playerDetails?.teams?[indexPath.row].in_squad?.season_id ?? 0]
+            
+            playedTeamCell.season.text = "Season: " + (seasonName ?? "N/A")
             
             return playedTeamCell
         default:

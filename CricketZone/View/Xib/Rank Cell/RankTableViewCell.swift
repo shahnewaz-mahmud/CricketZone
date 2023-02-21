@@ -27,6 +27,8 @@ class RankTableViewCell: UITableViewCell {
         
         cellBackground.layer.cornerRadius = 20
         cellBackground.dropShadow()
+        
+        teamImage.layer.cornerRadius = teamImage.frame.width/2
       
     }
 

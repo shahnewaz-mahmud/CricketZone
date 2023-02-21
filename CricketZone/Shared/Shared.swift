@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
  class Shared {
+     
+    
    
      func getReadableDateTime(data: String) -> (String, String) {
          let dateString = data
@@ -42,6 +44,29 @@ import UIKit
              return String(ageComponents.year ?? 0)
          }
          return nil
+     }
+     
+     func trimResultString(_ inputString: String) -> String {
+         guard let startIndex = inputString.firstIndex(of: "(") else {
+             // If the opening bracket is not found, return the original string
+             return inputString
+         }
+         
+         let trimmedString = inputString[..<startIndex].trimmingCharacters(in: .whitespaces)
+         
+         return trimmedString
+     }
+     
+     
+     func getReadableCounter(timeInSeconds: Double) -> String? {
+         let formatter = DateComponentsFormatter()
+         formatter.allowedUnits = [.day, .hour, .minute, .second]
+         formatter.zeroFormattingBehavior = .dropAll
+         formatter.unitsStyle = .abbreviated
+         formatter.maximumUnitCount = 4
+
+        let formattedDuration = formatter.string(from: timeInSeconds)
+        return formattedDuration
      }
 
 }

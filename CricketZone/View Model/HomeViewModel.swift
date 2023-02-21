@@ -145,4 +145,39 @@ class HomeViewModel {
         originVC.navigationController?.pushViewController(matchDetailsVC, animated: true)
     }
     
+    
+    
+    func fetchAllSeasons() {
+        guard let url = cricketAPIConfig.apiGetAllSeasonURL else {
+            return
+        }
+        print(url)
+        
+        APIService.fetchData(from: url) { (result: Result<SeasonList, Error>) in
+            switch result {
+            case .failure(let error):
+                // TO-DO: handle no internet error
+                if let error = error as? URLError,
+                   error.code == .notConnectedToInternet {
+                    print("Internet connection error")
+                } else {
+                    print(error.localizedDescription)
+                }
+            case .success(let seasons):
+                guard let seasons = seasons.data else {return}
+                
+                var seasonList = [Int: String]()
+                for season in seasons {
+                    seasonList[season.id ?? 0] = season.name
+                    }
+            
+                
+                UserDefaultsHelper.shared.saveAllSeasons(seasonList: seasonList, key: "Season")
+            }
+        }
+    }
+    
+    
+    
+    
 }

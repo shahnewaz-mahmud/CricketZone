@@ -91,7 +91,7 @@ class RecentMatchTVCell: UITableViewCell {
             placeholderImage: UIImage(named: "f1")
         )
         
-        matchResult.text = matchInfo.note
+        matchResult.text = Shared().trimResultString(matchInfo.note ?? "")
 
     }
     

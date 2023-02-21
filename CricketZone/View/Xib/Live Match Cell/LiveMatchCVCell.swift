@@ -72,17 +72,24 @@ class LiveMatchCVCell: UICollectionViewCell {
                 return
             }
             
-            let timeInterval = matchDate - currentTime
+            var timeInterval = matchDate - currentTime
             
-            let formatter = DateComponentsFormatter()
-            formatter.allowedUnits = [.day, .hour, .minute, .second]
-            formatter.zeroFormattingBehavior = .dropAll
-            formatter.unitsStyle = .abbreviated
-            formatter.maximumUnitCount = 3
-
-            let formattedDuration = formatter.string(from: timeInterval)
+            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
+                
+                guard let self = self else {return}
+                
+                if(timeInterval > 0){
+                    timeInterval -= 1
+                }
+                
+                DispatchQueue.main.async {
+                    self.countDownText.text = Shared().getReadableCounter(timeInSeconds: timeInterval)
+                }
+            }
             
-            countDownText.text = formattedDuration
+            
+            
+            
             let dateTime = Shared().getReadableDateTime(data: matchInfo.starting_at ?? "")
             matchTime.text = dateTime.1+", "+dateTime.0
             

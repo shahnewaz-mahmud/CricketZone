@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KHD-Z2-59v">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KHD-Z2-59v">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,23 +32,27 @@
                                     <constraint firstItem="wu9-AP-VC9" firstAttribute="width" secondItem="EqQ-9S-jfG" secondAttribute="width" multiplier="0.31401" id="wWz-Jr-Dcy"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oQj-ZK-TFR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oQj-ZK-TFR">
                                 <rect key="frame" x="0.0" y="212" width="414" height="684"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fFh-dh-yIT">
-                                <rect key="frame" x="142" y="167" width="130" height="31"/>
+                                <rect key="frame" x="40" y="167" width="334" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ZlH-bl-cdw"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="ODI"/>
+                                    <segment title="T20I"/>
+                                    <segment title="Test"/>
                                 </segments>
+                                <connections>
+                                    <action selector="categorySegmentAction:" destination="Y6W-OH-hqX" eventType="valueChanged" id="4np-tc-diF"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Main Background"/>
                         <constraints>
                             <constraint firstItem="oQj-ZK-TFR" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="1zy-T9-YXs"/>
                             <constraint firstAttribute="bottom" secondItem="oQj-ZK-TFR" secondAttribute="bottom" id="6OI-ev-1hS"/>
@@ -62,7 +64,7 @@
                             <constraint firstItem="oQj-ZK-TFR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="i4t-qg-UBo"/>
                             <constraint firstItem="oQj-ZK-TFR" firstAttribute="top" secondItem="fFh-dh-yIT" secondAttribute="bottom" constant="15" id="jdc-QS-WbU"/>
                             <constraint firstItem="fFh-dh-yIT" firstAttribute="centerX" secondItem="EqQ-9S-jfG" secondAttribute="centerX" id="mCl-nw-QzF"/>
-                            <constraint firstItem="fFh-dh-yIT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="142" id="n4N-u8-SKb"/>
+                            <constraint firstItem="fFh-dh-yIT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="n4N-u8-SKb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="icI-YQ-YwS"/>
@@ -85,7 +87,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zYW-EH-NkQ">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -100,12 +102,12 @@
     </scenes>
     <resources>
         <image name="logo" width="107" height="40"/>
-        <image name="rosette" catalog="system" width="107" height="128"/>
+        <image name="rosette" catalog="system" width="106" height="128"/>
+        <namedColor name="Main Background">
+            <color red="0.96100002527236938" green="0.97299998998641968" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Secondary Color">
             <color red="0.030999999493360519" green="0.093999996781349182" blue="0.22400000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

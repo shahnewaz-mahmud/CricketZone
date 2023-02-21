@@ -159,5 +159,33 @@ final class cricketAPIConfig {
         }
         return apiSpecificDateFixtureURL
     }
+    
+
+    static var apiGetTeamRankURL: URL? {
+        guard let apiURL = URL(string: apiBaseURL) else {
+            return nil
+        }
+        var components = URLComponents(url: apiURL, resolvingAgainstBaseURL: false)
+        components?.path += "/team-rankings"
+        components?.queryItems = [
+            URLQueryItem(name: "api_token", value: apiKey)
+        ]
+        guard let url = components?.url else { return nil }
+        return url
+    }
+    
+    
+    static var apiGetAllSeasonURL: URL? {
+        guard let apiURL = URL(string: apiBaseURL) else {
+            return nil
+        }
+        var components = URLComponents(url: apiURL, resolvingAgainstBaseURL: false)
+        components?.path += "/seasons"
+        components?.queryItems = [
+            URLQueryItem(name: "api_token", value: apiKey)
+        ]
+        guard let url = components?.url else { return nil }
+        return url
+    }
    
 }

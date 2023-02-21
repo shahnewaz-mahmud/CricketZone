@@ -26,6 +26,7 @@ class Constants {
     static let calendarCollectionViewCellId = "CalendarCollectionViewCell"
     static let leagueCollectionViewCellId = "LeagueCollectionViewCell"
     static let rankTableViewCellId = "RankTableViewCell"
+    static let rankTableViewHeaderId = "RankTableViewHeader"
     
 }
 
