@@ -160,21 +160,3 @@ struct TeamPostion: Codable {
     let captain, wicketkeeper, substitution: Bool?
 }
 
-// MARK: - Ball
-struct Ball: Codable {
-//    let id, fixtureID, teamID: Int?
-//    let ball: Double?
-//    let scoreboard: Scoreboard?
-//    let batsmanOneOnCreezeID, batsmanTwoOnCreezeID, batsmanID, bowlerID: Int?
-//    let batsmanoutID, catchstumpID: Int?
-//    let runoutByID: NSNull?
-//    let scoreID: Int?
-//    let batsman, bowler: Batsman?
-//    let score: Score?
-//    let team: Team?
-    
-    let batsman_one_on_creeze_id, batsman_two_on_creeze_id, bowler_id: Int?
-    
-    
-}
-

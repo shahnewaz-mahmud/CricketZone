@@ -97,6 +97,26 @@ final class cricketAPIConfig {
         return apiGetMatchDetailsURL
     }
     
+    static func getOverDetailsAPIUrl(matchId: Int) -> URL?{
+        var apiGetOverDetailsURL: URL? {
+            guard let apiURL = URL(string: apiBaseURL) else {
+                return nil
+            }
+            var components = URLComponents(url: apiURL, resolvingAgainstBaseURL: false)
+            components?.path += "/fixtures"
+            components?.path += "/\(matchId)"
+            components?.queryItems = [
+                URLQueryItem(name: "include", value: "balls,balls.batsmantwo"),
+                URLQueryItem(name: "api_token", value: apiKey)
+            ]
+            guard let url = components?.url else { return nil }
+            return url
+        }
+        return apiGetOverDetailsURL
+    }
+    
+    
+    
     static func getPlayerDetailsAPIUrl(playerId: Int) -> URL?{
         var apiGetPlayerDetailsURL: URL? {
             guard let apiURL = URL(string: apiBaseURL) else {

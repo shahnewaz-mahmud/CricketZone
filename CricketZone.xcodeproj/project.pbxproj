@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1158FB18FBB2833E0B0FDC40 /* Pods_CricketZone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BDD9269FE801248C9C98B8A /* Pods_CricketZone.framework */; };
+		3520943F29A69DA200560ECB /* OverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3520943E29A69DA200560ECB /* OverModel.swift */; };
 		356EADF029A4A67E00F69FDA /* TeamRankingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356EADEF29A4A67E00F69FDA /* TeamRankingModel.swift */; };
 		356EADF429A4C2B100F69FDA /* RankTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356EADF329A4C2B100F69FDA /* RankTableViewHeader.swift */; };
 		356EADF629A4C2D000F69FDA /* RankTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356EADF529A4C2D000F69FDA /* RankTableViewHeader.xib */; };
@@ -104,6 +105,7 @@
 /* Begin PBXFileReference section */
 		031C575EC0964D1EC9F7ACAD /* Pods-CricketZone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CricketZone.debug.xcconfig"; path = "Target Support Files/Pods-CricketZone/Pods-CricketZone.debug.xcconfig"; sourceTree = "<group>"; };
 		1FAE0122A389898F2860FB95 /* Pods-CricketZone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CricketZone.release.xcconfig"; path = "Target Support Files/Pods-CricketZone/Pods-CricketZone.release.xcconfig"; sourceTree = "<group>"; };
+		3520943E29A69DA200560ECB /* OverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverModel.swift; sourceTree = "<group>"; };
 		356EADEF29A4A67E00F69FDA /* TeamRankingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRankingModel.swift; sourceTree = "<group>"; };
 		356EADF329A4C2B100F69FDA /* RankTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTableViewHeader.swift; sourceTree = "<group>"; };
 		356EADF529A4C2D000F69FDA /* RankTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankTableViewHeader.xib; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				84D3AF7E29A30EB900B22C38 /* Player.swift */,
 				356EADEF29A4A67E00F69FDA /* TeamRankingModel.swift */,
 				356EADFE29A5351200F69FDA /* SeasonModel.swift */,
+				3520943E29A69DA200560ECB /* OverModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -746,6 +749,7 @@
 				89D37C3F299A356C0059C1D0 /* MatchInfoViewController.swift in Sources */,
 				35DBE91E29A25B02000A0E5F /* LeagueCollectionViewCell.swift in Sources */,
 				899C8F702994CCE00001AC43 /* LiveMatchCVCell.swift in Sources */,
+				3520943F29A69DA200560ECB /* OverModel.swift in Sources */,
 				35FAC681299802910069DEB4 /* MatchDetailsViewModel.swift in Sources */,
 				84D91EFD29A5BBEE002AB253 /* PlayerStatsTableViewCell.swift in Sources */,
 				84187CA229A6351400DA97A5 /* BowlingStatsTableViewCell.swift in Sources */,

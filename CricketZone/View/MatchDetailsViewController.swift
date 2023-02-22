@@ -57,7 +57,8 @@ class MatchDetailsViewController: UIViewController {
         team2Flag.layer.cornerRadius = team2Flag.frame.height/2
         contentView.layer.cornerRadius = 35
         
-        MatchDetailsViewController.matchDetailsViewModel.fetchMatchDetails(matchId: selectedMatchId ?? 123, isLive: isLive ?? false)
+        MatchDetailsViewController.matchDetailsViewModel.fetchMatchDetails(matchId: selectedMatchId ?? 0, isLive: isLive ?? false)
+        MatchDetailsViewController.matchDetailsViewModel.syncOversData(matchId: selectedMatchId ?? 0)
         setupBinder()
         
         //liveSegmentBtn.isHidden = true

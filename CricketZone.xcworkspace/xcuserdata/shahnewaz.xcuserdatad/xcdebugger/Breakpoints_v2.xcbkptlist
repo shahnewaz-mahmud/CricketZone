@@ -215,16 +215,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "710462B2-EA68-40C3-AC9F-650D70D695B8"
+            uuid = "DE020FBD-BC1C-45E1-96BA-9F4F09F6E4A3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CricketZone/Storage/UserDefaultsHelper.swift"
+            filePath = "CricketZone/View Model/MatchDetailsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "saveAllSeasons(seasonList:key:)"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "syncOversData(matchId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F94B5BDE-586F-42C3-BD20-26D409FDBF56"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricketZone/View Model/MatchDetailsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "syncOversData(matchId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
