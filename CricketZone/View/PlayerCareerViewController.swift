@@ -158,7 +158,7 @@ extension PlayerCareerViewController: UITableViewDataSource {
             carrValue10?.text = String(PlayerDetailsViewModel.shared.playerDetails?.career?[indexPath.row].bowling?["noball"] ?? 0)
 
             let carrValue11 = bowlingCell.viewWithTag(11) as? UILabel
-            carrValue11?.text = String(PlayerDetailsViewModel.shared.playerDetails?.career?[indexPath.row].bowling?["noball"] ?? 0)
+            carrValue11?.text = String(PlayerDetailsViewModel.shared.playerDetails?.career?[indexPath.row].bowling?["strike_rate"] ?? 0)
 
             let carrValue12 = bowlingCell.viewWithTag(12) as? UILabel
             carrValue12?.text = String(PlayerDetailsViewModel.shared.playerDetails?.career?[indexPath.row].bowling?["rate"] ?? 0)

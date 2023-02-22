@@ -64,8 +64,11 @@ class MatchDetailsViewController: UIViewController {
         
     }
     
+    
+    
     override func viewWillDisappear(_ animated: Bool) {
         MatchDetailsViewController.matchDetailsViewModel.autoRefreshTimer?.invalidate()
+        
     }
     
     

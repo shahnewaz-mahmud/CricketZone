@@ -28,6 +28,8 @@ class LiveMatchCVCell: UICollectionViewCell {
     
     @IBOutlet weak var startsInlabel: UILabel!
     
+    var timer: Timer?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -37,6 +39,12 @@ class LiveMatchCVCell: UICollectionViewCell {
         matchBackgroundView.dropShadow()
     
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        timer?.invalidate()
+    }
+    
     
     func setMatch(matchInfo: Match) {
         league.text = matchInfo.type
@@ -74,19 +82,17 @@ class LiveMatchCVCell: UICollectionViewCell {
             
             var timeInterval = matchDate - currentTime
             
-            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
-                
-                guard let self = self else {return}
-                
-                if(timeInterval > 0){
+            timer?.invalidate()
+            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
+                guard let self = self else { return }
+                if timeInterval > 0 {
                     timeInterval -= 1
                 }
-                
                 DispatchQueue.main.async {
                     self.countDownText.text = Shared().getReadableCounter(timeInSeconds: timeInterval)
                 }
             }
-            
+        
             
             
             

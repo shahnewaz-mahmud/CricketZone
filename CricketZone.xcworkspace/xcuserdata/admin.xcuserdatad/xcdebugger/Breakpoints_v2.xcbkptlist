@@ -23,146 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FBECF4BE-F915-4103-93E4-9F3CD7B0F9DA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CricketZone/View Model/PlayerDetailsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "fetchPlayerDetails(playerId:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "645032C0-25DA-4413-8C9A-00F925597534"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CricketZone/View Model/PlayerDetailsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "fetchPlayerDetails(playerId:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BCF55619-72D0-4F97-B903-75E5EF8497F9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CricketZone/View/Player Details/PlayerDetailsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "PlayerDetailsViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "BCF55619-72D0-4F97-B903-75E5EF8497F9 - 59ea84cf671bc216"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CricketZone.PlayerDetailsViewController.playerTeamsBtnText.getter : Swift.Optional&lt;__C.UILabel&gt;"
-                  moduleName = "CricketZone"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Works/2023/FInal%20Project/CricketZone/CricketZone/View/Player%20Details/PlayerDetailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "88">
-               </Location>
-               <Location
-                  uuid = "BCF55619-72D0-4F97-B903-75E5EF8497F9 - c2089d808f247e6a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CricketZone.PlayerDetailsViewController.playerTeamsBtnText.setter : Swift.Optional&lt;__C.UILabel&gt;"
-                  moduleName = "CricketZone"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Works/2023/FInal%20Project/CricketZone/CricketZone/View/Player%20Details/PlayerDetailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "108">
-               </Location>
-               <Location
-                  uuid = "BCF55619-72D0-4F97-B903-75E5EF8497F9 - 29e1ec317bd87919"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CricketZone.PlayerDetailsViewController.playerTeamsBtnText.modify : Swift.Optional&lt;__C.UILabel&gt;"
-                  moduleName = "CricketZone"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Works/2023/FInal%20Project/CricketZone/CricketZone/View/Player%20Details/PlayerDetailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  uuid = "BCF55619-72D0-4F97-B903-75E5EF8497F9 - 5d2c23f10b4fbde9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CricketZone.PlayerDetailsViewController.playerTeamsBtnText.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "CricketZone"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Works/2023/FInal%20Project/CricketZone/CricketZone/View/Player%20Details/PlayerDetailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  uuid = "BCF55619-72D0-4F97-B903-75E5EF8497F9 - 7ba5cbfe3ae02c6e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CricketZone.PlayerDetailsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; CricketZone.PlayerDetailsViewController"
-                  moduleName = "CricketZone"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Works/2023/FInal%20Project/CricketZone/CricketZone/View/Player%20Details/PlayerDetailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "700">
-               </Location>
-               <Location
-                  uuid = "BCF55619-72D0-4F97-B903-75E5EF8497F9 - a7bab59a62dd91d1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CricketZone.PlayerDetailsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CricketZone.PlayerDetailsViewController&gt;"
-                  moduleName = "CricketZone"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Works/2023/FInal%20Project/CricketZone/CricketZone/View/Player%20Details/PlayerDetailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "676">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "CAE514CB-FDAA-4685-A0D6-19DB166B47BB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -173,22 +33,6 @@
             startingLineNumber = "125"
             endingLineNumber = "125"
             landmarkName = "savePlayersToCoreData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6FDD8502-1F07-4775-AE9A-7462466EFFB2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CricketZone/Storage/CoreDataHelper.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "searchPlayers(searchText:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -316,6 +160,54 @@
             startingLineNumber = "99"
             endingLineNumber = "99"
             landmarkName = "fetchAllPlayers()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4E39A805-6570-4A34-874B-4881A8756239"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricketZone/View Model/PlayerStatsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "getPlayerStats(playerCareer:category:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1CD0C0B1-2A40-4C0B-B15E-9DF3BBB02115"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricketZone/View Model/PlayerStatsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getPlayerStats(playerCareer:category:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "198141F5-C4D0-40D3-8787-B210B2039CE6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricketZone/View Model/PlayerStatsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "getPlayerStats(playerCareer:category:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

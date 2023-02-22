@@ -57,3 +57,11 @@ struct TeamInfo: Codable {
 struct InSquad: Codable {
     let season_id, league_id: Int?
 }
+
+
+
+
+
+
+
+
