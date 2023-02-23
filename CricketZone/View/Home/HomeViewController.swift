@@ -44,9 +44,10 @@ class HomeViewController: UIViewController {
         homeViewModel.fetchAllPlayers()
         homeViewModel.fetchAllSeasons()
         
-        setupBinder()
+        setMatchNotification() 
         
-        testMethod()
+        setupBinder()
+      
 
     }
     
@@ -94,8 +95,20 @@ class HomeViewController: UIViewController {
         }.store(in: &cancellables)
     }
     
-    func testMethod() {
+    
+    
+    func setMatchNotification() {
+        let userInfo = UserDefaultsHelper.shared.getSavedData(key: Constants.userDefaultsUser)
         
+        if let userInfo = userInfo {
+            let currentDate = Date()
+            if currentDate.compare(userInfo.lastNotificationSet) == .orderedDescending {
+                homeViewModel.prepareMatchNotification()
+            }
+        } else {
+            homeViewModel.prepareMatchNotification()
+        }
+ 
     }
 
 
@@ -177,11 +190,12 @@ extension HomeViewController: UITableViewDelegate {
         guard let recentMatchCell = homeViewModel.recentMatchList else { return }
         
         homeViewModel.goToMatchDetailsPage(matchId: recentMatchCell[indexPath.row].id ?? 123, isLive: false, originVC: self)
+        
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y > 100 {
-                self.view.layoutIfNeeded() // <-- Call layoutIfNeeded() first
+                self.view.layoutIfNeeded()
                 
             UIView.animate(withDuration: 0.5, delay: 0, animations: { [weak self] in
                     guard let self = self else {return}
@@ -189,7 +203,7 @@ extension HomeViewController: UITableViewDelegate {
                     self.headerSectionHeightConstraint.constant = 140
                     self.recentMatchTopSpaceConstraint.constant = 10
                     
-                    self.view.layoutIfNeeded() // <-- Call layoutIfNeeded() again inside the animation block
+                    self.view.layoutIfNeeded()
                 })
             } else {
                 self.view.layoutIfNeeded()

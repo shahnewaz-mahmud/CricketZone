@@ -29,6 +29,8 @@ class Constants {
     static let rankTableViewHeaderId = "RankTableViewHeader"
     static let playerStatsTableViewCellId = "PlayerStatsTableViewCell"
     static let bowlingStatsTableViewCellId = "BowlingStatsTableViewCell"
+    static let overTableViewCellId = "OverTableViewCell"
+    static let userDefaultsUser = "User"
     
 }
 

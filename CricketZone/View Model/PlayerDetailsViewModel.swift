@@ -12,7 +12,7 @@ class PlayerDetailsViewModel {
     
     @Published var playerDetails: Player?
     
-    static let shared = PlayerDetailsViewModel()
+    static var shared = PlayerDetailsViewModel()
     
     func fetchPlayerDetails(playerId: Int) {
 

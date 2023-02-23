@@ -65,7 +65,7 @@ class FixtureViewModel {
         let url: URL?
         
         if(date != "" && leagueId == 0) {
-            url = cricketAPIConfig.getSpecificDateFixtureAPIUrl(date: date)
+            url = cricketAPIConfig.getSpecificDateFixtureAPIUrl(date1: date, date2: date)
             print(url ?? "")
         } else if (leagueId != 0 && date == "") {
             url = cricketAPIConfig.getSpecificLeagueFixtureAPIUrl(leagueId: leagueId)

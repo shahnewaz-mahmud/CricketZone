@@ -39,12 +39,9 @@ class SquadViewModel {
         guard let playerDetailsVC = playerDetailsVC else { return }
 
         playerDetailsVC.loadViewIfNeeded()
-        
-        //playerDetailsVC.selectedMatchId = matchId
-        
+
         PlayerDetailsViewModel.shared.fetchPlayerDetails(playerId: playerId)
-
-
+        
         originVC.navigationController?.pushViewController(playerDetailsVC, animated: true)
     }
     

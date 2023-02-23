@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,11 +13,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TeamFormTVHeaderFooterView" customModule="CricketZone" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="449" height="118"/>
+            <rect key="frame" x="0.0" y="0.0" width="446" height="115"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CsA-wg-IHQ">
-                    <rect key="frame" x="30" y="5" width="389" height="78"/>
+                    <rect key="frame" x="30" y="5" width="386" height="78"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Form" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pmx-kq-1uZ">
                             <rect key="frame" x="20" y="15" width="67.5" height="26"/>
@@ -34,7 +35,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="X92-uW-1Ey">
-                            <rect key="frame" x="220" y="40" width="129" height="20"/>
+                            <rect key="frame" x="217" y="40" width="129" height="20"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Win" translatesAutoresizingMaskIntoConstraints="NO" id="PET-3N-2Kd">
                                     <rect key="frame" x="0.0" y="0.0" width="25" height="20"/>
@@ -74,7 +75,7 @@
                             </subviews>
                         </stackView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ifo-VF-Did">
-                            <rect key="frame" x="369" y="45" width="20" height="10.5"/>
+                            <rect key="frame" x="366" y="45" width="20" height="10.5"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="GTX-YP-Pg5"/>
                                 <constraint firstAttribute="width" constant="20" id="lcB-qL-oT7"/>
@@ -116,12 +117,12 @@
                 <outlet property="teamName" destination="ARR-Yf-6br" id="Q1w-Va-rCD"/>
                 <outlet property="xibBackground" destination="CsA-wg-IHQ" id="1I8-5W-chX"/>
             </connections>
-            <point key="canvasLocation" x="-293.47826086956525" y="-113.83928571428571"/>
+            <point key="canvasLocation" x="-295.6521739130435" y="-114.84375"/>
         </view>
     </objects>
     <resources>
         <image name="Win" width="83" height="83"/>
-        <image name="chevron.down" catalog="system" width="128" height="72"/>
+        <image name="chevron.down" catalog="system" width="128" height="70"/>
         <namedColor name="Main Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

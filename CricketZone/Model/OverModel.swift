@@ -36,3 +36,8 @@ struct Score: Codable  {
     let bye, leg_bye, noball, noball_runs: Int?
     let is_wicket, ball, out: Bool?
 }
+
+
+struct Over: Codable  {
+    var balls: [Ball]?
+}

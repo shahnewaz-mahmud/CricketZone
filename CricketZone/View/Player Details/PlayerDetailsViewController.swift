@@ -46,6 +46,9 @@ class PlayerDetailsViewController: UIViewController {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        PlayerDetailsViewModel.shared = PlayerDetailsViewModel()
+    }
     
     
     func setupBinder() {

@@ -13,8 +13,8 @@ final class cricketAPIConfig {
     
     private static let apiBaseURL = "https://cricket.sportmonks.com/api/v2.0"
     //private static let apiKey = "qgcaTr1JcWOsR9trRy8ScGLyoGLnnVZDMo31Ax2EB52W74FYxCQ3EPjBGsr0"
-    private static let apiKey = "JUn96Ic4hBIhndkYKHOCWZS5NpH05RCmK19vDiuPsduKN9p3c7CJtiDU8a9z"
-    
+    //private static let apiKey = "JUn96Ic4hBIhndkYKHOCWZS5NpH05RCmK19vDiuPsduKN9p3c7CJtiDU8a9z"
+    private static let apiKey = "aGypft0iQPFUBpefG6U1QInmd9OvUDsadwYyMFJZQSGud9rb80dmNlruCfuL"
     
     static var apiGetUpcomingMatchURL: URL? {
         guard let apiURL = URL(string: apiBaseURL) else {
@@ -135,10 +135,10 @@ final class cricketAPIConfig {
         return apiGetPlayerDetailsURL
     }
     
-    static func getSpecificDateFixtureAPIUrl(date: String) -> URL?{
+    static func getSpecificDateFixtureAPIUrl(date1: String, date2: String) -> URL?{
         
-        let time1 = date + "T00:00:00.000000Z"
-        let time2 = date + "T24:00:00.000000Z"
+        let time1 = date1 + "T00:00:00.000000Z"
+        let time2 = date2 + "T24:00:00.000000Z"
         
         var apiSpecificDateFixtureURL: URL? {
             guard let apiURL = URL(string: apiBaseURL) else {

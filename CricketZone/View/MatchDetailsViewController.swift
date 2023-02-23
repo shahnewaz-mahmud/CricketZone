@@ -58,10 +58,15 @@ class MatchDetailsViewController: UIViewController {
         contentView.layer.cornerRadius = 35
         
         MatchDetailsViewController.matchDetailsViewModel.fetchMatchDetails(matchId: selectedMatchId ?? 0, isLive: isLive ?? false)
-        MatchDetailsViewController.matchDetailsViewModel.syncOversData(matchId: selectedMatchId ?? 0)
-        setupBinder()
         
-        //liveSegmentBtn.isHidden = true
+        MatchDetailsViewController.matchDetailsViewModel.syncOversData(matchId: selectedMatchId ?? 0)
+        
+        
+        
+        
+        
+        setupBinder()
+
         
     }
     
@@ -69,7 +74,7 @@ class MatchDetailsViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         MatchDetailsViewController.matchDetailsViewModel.autoRefreshTimer?.invalidate()
-        
+        MatchDetailsViewController.matchDetailsViewModel = MatchDetailsViewModel()
     }
     
     
@@ -262,6 +267,7 @@ class MatchDetailsViewController: UIViewController {
  
             
         }.store(in: &cancellables)
+        
     }
     
 

@@ -51,6 +51,8 @@ class LiveScoreViewController: UIViewController {
             }
   
             self.liveScoreViewModel.prepareLiveScoreData(matchData: matchData)
+            let winProbability = self.liveScoreViewModel.getWinPrediction(matchInfo: matchData)
+            print(winProbability)
         }.store(in: &cancellables)
         
         liveScoreViewModel.$liveBattingDetails.sink { [weak self] batting in

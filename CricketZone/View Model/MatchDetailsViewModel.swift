@@ -12,6 +12,10 @@ class MatchDetailsViewModel {
     @Published var matchInfo: MatchData?
     @Published var overDetails: [Ball]?
     
+    var localTeamWinRecords: [Bool]?
+    var visitorTeamWinRecords: [Bool]?
+    
+    
     var autoRefreshTimer: Timer?
     
     
@@ -46,12 +50,11 @@ class MatchDetailsViewModel {
                 }
             case .success(let match):
                 print("Match Result",match)
+                self.prepareWinRecord(matchDetails: match.data)
                 self.matchDetails = match.data
                 self.matchInfo = match.data
             }
         }
-        
-        
     }
     
     
@@ -72,13 +75,61 @@ class MatchDetailsViewModel {
                     print(error.localizedDescription)
                 }
             case .success(let overs):
-                print("Over Details",overs.data)
+                dump(overs.data)
                 self.overDetails = overs.data?.balls
             }
         }
-        
-        
     }
+    
+    func prepareWinRecord(matchDetails: MatchData?) {
+        print("Match Result",matchDetails)
+        var visitorTeamMatchCount = matchDetails?.visitorteam?.results?.count ?? 0
+        
+        if visitorTeamMatchCount != 0 {
+            if visitorTeamMatchCount > 5 {
+                visitorTeamMatchCount = 5
+            }
+            
+            var visitorTeamrecords: [Bool] = Array(repeating: false, count: 5)
+            
+            for i in 0...visitorTeamMatchCount - 1 {
+                if String(matchDetails?.visitorteam?.results?[i].winner_team_id ?? 0) == String(matchDetails?.visitorteam?.id ?? 0) {
+                    visitorTeamrecords[i] = true
+                } else {
+                    visitorTeamrecords[i] = false
+                }
+            }
+            
+            visitorTeamWinRecords = visitorTeamrecords
+            print(visitorTeamrecords)
+        }
+        
+
+        var localTeamMatchCount = matchDetails?.localteam?.results?.count ?? 0
+        
+        
+        if localTeamMatchCount != 0 {
+            if localTeamMatchCount > 5 {
+                localTeamMatchCount = 5
+            }
+
+            var localTeamRecords: [Bool] = Array(repeating: false, count: 5)
+            
+            for i in 0...localTeamMatchCount - 1 {
+                if String(matchDetails?.localteam?.results?[i].winner_team_id ?? 0) == String(matchDetails?.localteam?.id ?? 0) {
+                    localTeamRecords[i] = true
+                } else {
+                    localTeamRecords[i] = false
+                }
+            }
+            localTeamWinRecords = localTeamRecords
+            print(localTeamRecords)
+        }
+
+    }
+    
+    
+    
     
     
 }
